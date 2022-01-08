@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="proofs">
+
+  <title>Proofs, Proofs...</title>
+
+  <introduction>
+    <p>In this chapter, I explain and discuss proofs of various mathematical results. My aim in this section is to walk the reader through the lines of reasoning that a mathematician may use in constructing such proofs.</p>
+  </introduction>
+
+  <!---->
+  <!---->
+  <!---->
+  <!-- Mathematical Induction and the Cauchy-Schwarz Inequality -->
+  <!---->
+  <!---->
+  <!---->
+
+  <section xml-id="proofs-cauchy_schwarz">
+    <title>Mathematical Induction and the Cauchy-Schwarz Inequality</title>
+
+    <!-- Refer to my desmos graph for all the workings -->
+    <introduction>
+      <p>The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
+
+      <p>In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: The Principle of Mathematical Induction.</p>
+
+      <p>Mathematical induction is a great tool to have your inventory, but is sort of a hassle to explain, so I won't do that here. Use the power of the internet! Some sources which I think do a good job covering the topic are <url href="https://brilliant.org/wiki/induction/">here</url> and <url href="https://www.mathsisfun.com/algebra/mathematical-induction.html">here</url>.</p>
+    </introduction>
+
+    <!-- Introduce the theorem and proof -->
+    <subsection xml-id="proofs-cauchy_schwarz-statement">
+      <title>Laying the Proverbial Groundwork</title>
+
+      <p>The version of the Cauchy-Schwarz Inequality which follows this paragraph — and which we're going to prove — is a bit abridged, for the sake of simplicity. Don't worry, it's still perfectly valid. It's just missing an extra condition for equality.</p>
+
+      <p>The proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible.</p>
+
+      <theorem>
+        <title>Cauchy-Schwarz Inequality (Truncated)</title>
+        <statement>
+          <p>For all sequences of real numbers <m>a_{i}</m> and <m>b_{i}</m>, the following inequality holds: <me>\left( \sum_{i = 1}^{n} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{n} a_{i}^2 \right) \left( \sum_{i = 1}^{n} b_{i}^2 \right)</me>.</p>
+        </statement>
+      </theorem>
+
+      <p>From the statement of the theorem, it should become apparent why one might be motivated to use mathematical induction as the proof technique. In this context, <m>n</m> can only assume values in <m>\mathbb{Z}^+</m>, so it makes for a good opportunity to utilize induction.</p>
+
+      <p>So then, let's get started on that proof! First, we'll consider the base case of <m>n = 1</m>, which is quite trivial. We see that <me>(a_{1} b_{1})^2 \leq a_{1}^2 b_{1}^2</me>, which is obviously true. The crux of the proof lies in showing that <me>\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)</me> holds for all <m>k \in \mathbb{Z}^+</m>.</p>
+    </subsection>
+
+  <subsection xml-id="proofs-cauchy_schwarz-proof">
+    <title>It's Always the Algebra...</title>
+
+    <p>We want to make use of our inductive step, which is our assumption that <me>\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right)</me>.</p> 
+
+    <p>This should motivate us to express <m>\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2</m> in terms of <m>\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2</m>. Let's write the left hand side out: <me>\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})</me>.</p>
+
+    <p>How does this quantity differ from the other one? Well, note that in addition to the multiplication of <me>\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})</me>, we also require the last term, <m>a_{k+1} b_{k+1}</m>, in the left factor to be distributed to all the terms in the right factor, and vice versa. Since the two factors are the same, that'll result in an additional quantity of <me>2 \cdot (a_1 b_1 a_{k+1} b_{k+1} + a_2 b_2 a_{k+1} b_{k+1} + ... + a_{k} b_{k} a_{k+1} b_{k+1} + a_{k+1} b_{k+1} a_{k+1} b_{k+1})</me>.</p>
+
+    <p>Therefore, <me>\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)</me>.</p>
+
+    <p>Feel free to expand these summations to double-check. Now, the appearance of the middle term marks a good time to invoke the inductive step:
+      <md>
+        <mrow>\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)</mrow>
+        <mrow>\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right).</mrow>
+      </md>
+    </p>
+
+    <p>This is a good time to compare the quantity <me>\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)</me> with that of<me>\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)</me>.</p>
+
+    <p>Namely, if we can show that the top quantity is less or equal than the bottom quantity, then the proof is complete. Let's expand this latter quantity out: <me>\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = (a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2)</me>.</p>
+
+    <p>In a manner similar to what occurred previously, we observe that<fn>It's not real math unless it runs off the page!</fn>
+      <md>
+        <mrow>(a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2) = \text{ } \amp (a_1^2 + a_2^2 + ... + a_{k}^2)(b_1^2 + b_2^2 + ... + b_{k}^2) \text{ } +</mrow>
+        <mrow>\amp (a_1^2 b_{k+1}^2 + a_2^2 b_{k+1}^2 + ... + a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2) \text{ } +</mrow>
+        <mrow>\amp (a_{k+1}^2 b_1^2 + a_{k+1}^2 b_2^2 + ... + a_{k+1}^2 b_{k}^2 + a_{k+1}^2 b_{k+1}^2).</mrow>
+      </md>
+    </p>
+
+    <p>In summation notation, we obtain <me>\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)</me>.</p>
+  </subsection>
+
+  <subsection xml-id="proofs-cauchy_schwarz-end">
+    <title>Approaching an Apex; Alternatively, an Apotheosis</title>
+
+    <p>At this point, we should begin to envision what the final result will look like. If we could show the following, then we would have a complete proof:
+      <md>
+        <mrow>\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)</mrow>
+        <mrow>\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)</mrow>
+        <mrow>\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)</mrow>
+        <mrow>\amp = \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right).</mrow>
+      </md>
+    </p>
+
+    <p>So far, we have shown the first, second, and fourth (in)equalities to be true. The last obstacle to overcome in order to finish this induction proof is to show that <me>\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)</me>.</p>
+
+    <p>This is, of course, equivalent to showing that <me>2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)</me>.</p>
+
+    <p>Let's see what these would look like written out<fn>Writing the sums out isn't necessary, but I think it helps one get a sense of the algebra. Also, sorry about this line being ridiculously long.</fn>: <me>2(a_1 a_{k+1} b_1 b_{k+1} + a_2 a_{k+1} b_2 b_{k+1} + ... + a_{k} a_{k+1} b_{k} b_{k+1} + a_{k+1} a_{k+1} b_{k+1} b_{k+1}) \leq (a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2) + (a_2^2 b_{k+1}^2 + a_{k+1}^2 b_2^2) + ... + (a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k}^2) + (a_{k+1}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2)</me>.</p>
+
+    <p>At this point, my line of reasoning resembled something like this: "<em>The left and right-hand sides are both sums of k+1 terms. If I could show that each term on the left is less than or equal to its respective term on the right, then I'd be done</em>".</p>
+
+    <p>That is, by the way, exactly what we're going to show. Do the quantities <m>a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2</m> and <m>2(a_1 a_{k+1} b_1 b_{k+1})</m> remind you of anything?</p>
+
+    <p>What if they were re-written as <m>(a_1 b_{k+1})^2 + (a_{k+1} b_1)^2</m> and <m>2(a_1 b_{k+1} \cdot a_{k+1} b_1)</m>? I won't keep you in suspense anymore — we're going to make use of the fact that <m>p^2 + q^2 \geq 2pq</m> for all <m>p, q \in \mathbb{R}</m><fn>
+      <md>
+        <mrow>(p - q)^2 \amp \geq 0</mrow>
+        <mrow>\implies p^2 + q^2 - 2pq \amp \geq 0</mrow>
+        <mrow>\implies p^2 + q^2 \amp \geq 2pq.</mrow>
+      </md>
+    </fn>.</p>
+
+    <p>It follows immediately from said fact that <me>2(a_i a_{k+1} b_i b_{k+1}) \leq (a_i^2 b_{k+1}^2 + a_{k+1}^2 b_i^2)</me> for all <m>i \in \{1, 2, 3, ..., k, k + 1\}</m>. Then we have shown on a term-by-term basis that <me>2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)</me>.</p>
+
+    <p>At last, we have shown that <me>\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)</me> holds for all <m>k \in \mathbb{Z}^+</m>, by the Principle of Mathematical Induction. This therefore proves our truncated version of the Cauchy-Schwarz Inequality. <m>\blacksquare</m></p>
+  </subsection>
+  </section>
+
+</chapter>

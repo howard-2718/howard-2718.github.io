@@ -1,0 +1,24 @@
+<!-- RUN THIS IN THE PROJECT FOLDER: xsltproc -xinclude ~/Documents/PreTeXt/mathbook/xsl/pretext-html.xsl ~/Documents/PreTeXt/r_parab/main.xml -->
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <book>
+
+    <!-- Title -->
+    <title>Romance on a Parabola</title>
+    <subtitle>A PreTeXt Math Blog</subtitle>
+
+    <!-- Front Matter -->
+    <xi:include href="frontmatter.xml"/>    
+
+    <!-- Contents -->
+    <part xml:id="part-contents">
+      <title>Contents</title>
+
+      <xi:include href="miscellaneous.xml"/>
+      <xi:include href="proofs.xml"/>
+    </part>
+
+  </book>
+
+</pretext>

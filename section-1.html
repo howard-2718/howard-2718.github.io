@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-01-07T23:23:02-08:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculus in Incremental Game Mechanics</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Romance on a Parabola:</span> <span class="subtitle">A PreTeXt Math Blog</span></a></h1>
+<p class="byline">Howard Li</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="miscellaneous.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-2.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="miscellaneous.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-contents.html" data-scroll="part-contents"><span class="codenumber">I</span> <span class="title">Contents</span></a></li>
+<li class="link">
+<a href="miscellaneous.html" data-scroll="miscellaneous"><span class="codenumber">1</span> <span class="title">Miscellaneous Fun</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1" class="active">Calculus in Incremental Game Mechanics</a></li>
+<li><a href="section-2.html" data-scroll="section-2">How to Make Any Graph Spin in Desmos</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="proofs.html" data-scroll="proofs"><span class="codenumber">2</span> <span class="title">Proofs, Proofs...</span></a><ul><li><a href="section-3.html" data-scroll="section-3">Mathematical Induction and the Cauchy-Schwarz Inequality</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Calculus in Incremental Game Mechanics</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-9"><em class="emphasis">Incremental games</em>, perhaps better known under the misnomer <em class="emphasis">idle games</em>, are video games whose gameplay centers on the acquisition of in-game currency.</p>
+<p id="p-10">Roughly speaking, the player spends in-game currencies to increase the rate at which they generate said currencies, which the player then uses to further increase the rate at which they generate said currencies.</p>
+<p id="p-11">...which they then use to further increase the rate at which they generate said currencies.</p>
+<p id="p-12">Though not the first game in the genre, the popularity of Orteil's <em class="emphasis">Cookie Clicker</em> in 2013 led to a surge of interest in incremental games, particularly on the flash game site <em class="emphasis">Kongregate</em>. Notable incremental games released since then include <em class="emphasis">Adventure Capitalist</em>, <em class="emphasis">Realm Grinder</em>, and <em class="emphasis">Antimatter Dimensions</em>, among others.</p>
+<p id="p-13">The history of incremental games is largely beyond the scope of this reading — we're here to do math, not ramble about <em class="emphasis">Cookie Clicker</em>. In this section, we'll take a look at two applications of calculus in incremental games:</p>
+<ol class="decimal">
+<li id="li-1"><p id="p-derived-li-1">Optimizing Happiness in <em class="emphasis">Kittens Game</em>, and</p></li>
+<li id="li-2"><p id="p-derived-li-2">Modeling Replicanti Growth in <em class="emphasis">Antimatter Dimensions.</em></p></li>
+</ol>
+<p id="p-14">The relevant gameplay mechanics in these examples will be explained, so it is by no means necessary to have previously played either of these games. They are, however, very entertaining, and so I highly recommend anyone to go give them a try.</p></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Optimizing Happiness in <em class="emphasis">Kittens Game</em></span>
+</h3>
+<p id="p-15">Since its release in 2014, <em class="emphasis">Kittens Game</em>,developed by bloodrizer, has gone on to become a cult classic among works in the genre. In <em class="emphasis">Kittens Game</em>, the player is tasked with managing a village of kittens.</p>
+<p id="p-16">One mechanic in <em class="emphasis">Kittens Game</em> is the management of happiness. Every kitten in the village shares the same happiness value, which is expressed as a percentage.</p>
+<p id="p-17">Relative to a kitten at 100% happiness, a kitten whose happiness is 50% is only half as productive. Contrast this with a kitten at 120% happiness, who is 120% as productive, somehow. Assuming the player wishes to maximize productivity, it is evident that low happiness is detrimental.</p>
+<p id="p-18">There are many factors which influence the happiness of the player's kittens, but the main one we will focus on is the mechanic wherein <em class="emphasis">every</em> kitten's happiness goes down by 2% for each kitten 'in excess of 5'. Kittens don't like overpopulation!</p>
+<p id="p-19">For example, in a village of 6 kittens, each kitten will have a happiness of 98%. This is because the population is 1 greater than the pre-determined threshold of 5. Increasing the population to 16 will decrease every kitten's happiness to 78%.</p>
+<p id="p-20">Mathematically, this as interpreted as \(h = 1 - 0.02(p - 5)\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a>, where \(h\) is the quantity denoting each kitten's happiness, and where \(p\) represents the population.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn">I'm looking at the behaviour of this function for populations over 5. In the game, the happiness stays at 100% for populations less than 5 kittens.</div></div>
+<p id="p-21">The happiness of the entire village is consequently</p>
+<div class="displaymath">
+\begin{equation*}
+h_{total} = p * h = p * (1 - 0.02(p - 5))\text{.}
+\end{equation*}
+</div>
+<p id="p-22">Those looking to maximize production will therefore wonder: <em class="emphasis">What village population is the most productive?</em> A village with a low population will lack enough kittens to do anything, but a village with too high a population will get nothing done.</p>
+<p id="p-23">We can feasibly imagine that there is a 'sweet spot' somewhere in the middle, with regard to the population. Let's now go about finding it. First, let \(h_{total}\) be notated as a function of \(p\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+h_{total}(p) = p * h = p * (1 - 0.02(p - 5)) = 1.1p - 0.02p^2\text{.}
+\end{equation*}
+</div>
+<p id="p-24">Since this is a quadratic function, we <em class="emphasis">could</em> complete the square to rewrite \(h_{total}(p)\) in vertex form, but instead, let's find the maximum using calculus. We'll employ the first derivative to find stationary points, and the second derivative to verify extrema.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn">Since the function is polynomial, it follows that we can differentiate as much as we want.</div></div>
+<p id="p-25">A little bit of differentiation:</p>
+<div class="displaymath">
+\begin{align*}
+\amp h_{total}(p) = 1.1p - 0.02p^2\\
+\implies \; \amp h'_{total}(p) = 1.1 - 0.04p\\
+\implies \; \amp h''_{total}(p) = -0.04
+\end{align*}
+</div>
+<p id="p-26">If we solve for \(h'_{total}(p) = 0\text{,}\) we see that \(p = \frac{1.1}{0.04} = 27.5\text{.}\) For this value of \(p\) (actually, for all values of \(p\)), the second derivative is negative, so there is definitely a local maximum at \(p = 27.5\text{.}\)</p>
+<p id="p-27">We can't exactly have half of a kitten (at least, not without raising serious ethical concerns), so this means that either 27 or 28 kittens is the optimal population for the player's village.</p>
+<p id="p-28">Alternatively, we know from pre-calculus that the vertex of a parabola is located at \(p = \frac{b}{2a}\text{,}\) so we could've eschewed the use of calculus by simply calculating \(p = \frac{1.1}{2 * 0.02} = 27.5\text{.}\)</p>
+<p id="p-29">To round off this section, let's consider a different mechanic. Luxury items are another factor which affects kitten happiness — for each luxury item in stock, the happiness of every kitten increases by a flat 10%. What effect would these items have on the value of the 'sweet spot'? I'll let you ruminate on that...</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Modeling Replicanti Growth in <em class="emphasis">Antimatter Dimensions</em></span>
+</h3>
+<p id="p-30">In <em class="emphasis">Antimatter Dimensions</em>, developed by Hevipelle, the player's goal is to produce antimatter. Antimatter is produced by the titular Antimatter Dimensions, whose efficiency can be increased through the purchase of Infinity Dimensions (it's quite complicated, so don't worry about it).</p>
+<p id="p-31">Replicanti are a mechanic that further increases antimatter production. When an in-game tick elapses, every replicanti has a chance to replicate. The duration of an in-game tick, as well as the chance of replication, can be improved with upgrades. Simply put, more replicanti leads to more antimatter.</p>
+<p id="p-32">Let \(r(i)\) be the function expressing the amount of replicanti present at a time \(i\) in ticks, and let \(i(t)\) be the function representing the number of in-game ticks elapsed at this same time \(t\text{,}\) but now in seconds. Suppose the constants \(p\) and \(d\) represent the probability of replication and the duration of an in-game tick, respectively.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 3 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn">Note that we've moved on to a different example, so the notation no longer represents what it did previously.</div></div>
+<p id="p-33">Our goal is to find an equation for \(r(i)\) which accurately models the growth of replicanti. To find said equation, let's approach the problem by taking a look at its derivative, \(\frac{dr}{di}(i)\text{.}\)</p>
+<p id="p-34">We know that the rate at which replicanti grow is proportional to the amount of replicanti already present:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dr}{di}(i) = p * r(i)\text{.}
+\end{equation*}
+</div>
+<p id="p-35">This is, in fact, a differential equation. In fact, it's one of the simplest examples of a differential equation — you may already know what the answer is. Let's multiply both sides by \(di\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+dr = p * r(i) \; di\text{.}
+\end{equation*}
+</div>
+<p id="p-36">Divide both sides by \(r(i)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{r(i)} \; dr = p \; di\text{.}
+\end{equation*}
+</div>
+<p id="p-37">Integrate both sides:</p>
+<div class="displaymath">
+\begin{equation*}
+\int \frac{1}{r(i)} \; dr = \int p \; di\text{.}
+\end{equation*}
+</div>
+<p id="p-38">Almost there:</p>
+<div class="displaymath">
+\begin{equation*}
+ln|r(i)| = pi + c\text{.}
+\end{equation*}
+</div>
+<p id="p-39">And finally,</p>
+<div class="displaymath">
+\begin{equation*}
+r(i) = Ce^{pi}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">There <em class="emphasis">is</em> one caveat, however. We wanted \(r(t)\text{,}\) not \(r(i)\text{.}\) Luckily, \(i\) and \(t\) are closely related through the function \(i(t)\text{,}\) so our function should actually resemble the following:</p>
+<div class="displaymath">
+\begin{equation*}
+r(t) = Ce^{pi(t)}\text{.}
+\end{equation*}
+</div>
+<p id="p-40">As it turns out, \(i(t) = \frac{t}{d}\text{.}\) For example, if \(t = 10\) seconds and \(d = 0.5 \) seconds, \(i(t)\) would assume a value of \(\frac{10}{0.5} = 20\) ticks.</p>
+<p id="p-41">Therefore, we arrive at a final equation for \(r(t)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+r(t) = Ce^{\frac{p}{d}t}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">I bet it's not every day that video games make you think of calculus!</p></section></section></div></main>
+</div>
+</body>
+</html>

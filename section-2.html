@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-01-07T23:23:02-08:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to Make Any Graph Spin in Desmos</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Romance on a Parabola:</span> <span class="subtitle">A PreTeXt Math Blog</span></a></h1>
+<p class="byline">Howard Li</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="proofs.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a class="next-button button toolbar-item" href="proofs.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-contents.html" data-scroll="part-contents"><span class="codenumber">I</span> <span class="title">Contents</span></a></li>
+<li class="link">
+<a href="miscellaneous.html" data-scroll="miscellaneous"><span class="codenumber">1</span> <span class="title">Miscellaneous Fun</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Calculus in Incremental Game Mechanics</a></li>
+<li><a href="section-2.html" data-scroll="section-2" class="active">How to Make Any Graph Spin in Desmos</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="proofs.html" data-scroll="proofs"><span class="codenumber">2</span> <span class="title">Proofs, Proofs...</span></a><ul><li><a href="section-3.html" data-scroll="section-3">Mathematical Induction and the Cauchy-Schwarz Inequality</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">How to Make Any Graph Spin in Desmos</span>
+</h2>
+<section class="introduction" id="introduction-3"><p id="p-42">Today, we're gonna mess around in Desmos. That's right, I'll show you how to make any Desmos graph rotate around any location on the plane you want! Fair warning, what's about to unfold is a bit ridiculous.</p>
+<p id="p-43">The approach we'll take has three main steps, as follows:</p>
+<ol class="decimal">
+<li id="li-3"><p id="p-44">Parameterize the curve into two functions, \(x(t)\) and \(y(t)\text{.}\)</p></li>
+<li id="li-4"><p id="p-45">Apply the rotation matrix, \(\begin{bmatrix} cos(\theta) &amp; -sin(\theta) \\ sin(\theta) &amp; \text{ }cos(\theta) \end{bmatrix}\) to the column vector \(\begin{bmatrix} x(t) \\ y(t) \end{bmatrix}\text{.}\)</p></li>
+<li id="li-5"><p id="p-46">Create a slider for \(\theta\) and let the value of \(\theta\) vary over time.</p></li>
+</ol>
+<p id="p-47">The first step is usually the hardest.</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title"><em class="emphasis">Erster Boden:</em> Parameterize the Graph</span>
+</h3>
+<p id="p-48">To be completely transparent with you, this post is going to be very hand-wavy. I'll show you exactly what you need to do to get your graph rotating, with little further explanation. I really recommend you look deeper into the topics we're going to look at, though. There's a lot of cool stuff here!</p>
+<p id="p-49">So, let's get started by parameterizing our curve. It'll be good to work with an example, so throughout this post, I'll be making the implicitly-defined curve \(y^3 + 3xy = 2\) spin.</p>
+<p id="p-50">The process follows these steps:</p>
+<ol class="decimal">
+<li id="li-6"><p id="p-51">Solve either for \(x\) in terms of \(y\text{,}\) or for \(y\) in terms of \(x\text{.}\)</p></li>
+<li id="li-7"><p id="p-52">If you solved for \(x\) in terms of \(y\text{,}\) let \(x_{c}(t)\) equal your expression for \(x\) in terms of \(t\text{,}\) and let \(y_{c}(t) = t\text{.}\)</p></li>
+<li id="li-8"><p id="p-53">If you solved for \(y\) in terms of \(x\text{,}\) let \(x_{c}(t) = t\text{,}\) and let \(y_{c}(t)\) equal your expression for \(y\) in terms of \(t\text{.}\)</p></li>
+</ol>
+<p id="p-54">On the other hand, if your curve is already parameterized, then you can skip this whole first section. Convenient!</p>
+<p id="p-55">Now, for the curve \(y^3 + 3xy = 2\text{,}\) it'll be easier to solve for \(x\) in terms of \(y\text{,}\) so let's do that:</p>
+<div class="displaymath">
+\begin{equation*}
+y^3 + 3xy = 2 \implies x = \frac{2 - y^3}{3y}\text{.}
+\end{equation*}
+</div>
+<p id="p-56">Then we let \(x_{c}(t) = \frac{2 - t^3}{3t}\) and \(y_{c}(t) = t\text{.}\) That's it, our curve is now parameterized! Let's go look at the fruits of our labour in Desmos.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="image/miscellaneous-spin_1.png" class="contained" alt=""></div>
+<p id="p-57">Type what you see in the image above into a new Desmos graph. You should get two identical curves, right on top of each other. It's important to set a large range for the parameterization variable \(t\) in order to draw the curve.</p>
+<p id="p-58">Try messing around with that inequality for \(t\) and see what happens.</p>
+<p id="p-59">With some overly complex curves, simply solving for one variable in terms of the other is not going to work. In that case, you'll have to apply more complicated parameterization techniques — check online! You could also just break the curve up into parts, and spin each part separately.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title"><em class="emphasis">Zweiter Stock:</em> Apply the Transformation Matrix</span>
+</h3>
+<p id="p-60">What the line \((x_{c}(t), y_{c}(t))\) does in Desmos is graph all the points \((x, y)\) on the plane which satisfy the equations \(x = x_{c}(t)\) and \(y = y_{c}(t)\) as \(t\) varies between its lower and upper bound. Unsurprisingly, that traces out the curve in question.</p>
+<p id="p-61">So now, let's add in the rotation! Doing so is going to require us to venture to the land of linear algebra, as we're going to utilize some matrices. You don't need to know any linear algebra to follow the process, though some of the explanations may fly over your head. That's no problem.</p>
+<p id="p-62">We can express any point \((x, y)\) in the x-y plane as a 2 by 1 column vector, \(\begin{bmatrix} x \\ y \end{bmatrix}\text{.}\)</p>
+<p id="p-63">If we then wish to rotate the point \((x, y)\) around the origin by an angle \(a\) to obtain the rotated point \((x_{r}, y_{r})\text{,}\) we need to multiply the column vector with the 2D rotation matrix on the left, like so:</p>
+<div class="displaymath">
+\begin{equation*}
+(x_{r}, y_{r}) = \begin{bmatrix} cos(a) &amp; -sin(a) \\ sin(a) &amp; \text{ }cos(a) \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} x_{r} \\ y_{r} \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-64">In our case, we're going to multiply using the column vector \(\begin{bmatrix} x_{c}(t) \\ y_{c}(t) \end{bmatrix}\text{,}\) which represents our curve. A bit of matrix multiplication gives the following:</p>
+<div class="displaymath">
+\begin{equation*}
+(x_{cr}(t), y_{cr}(t)) = \begin{bmatrix} cos(a) &amp; -sin(a) \\ sin(a) &amp; \text{ }cos(a) \end{bmatrix} \begin{bmatrix} x_{c}(t) \\ y_{c}(t) \end{bmatrix} = \begin{bmatrix} x_{c}(t)\cos(a) - y_{c}(t)\sin(a) \\ x_{c}(t)\sin(a) + y_{c}(t)\cos(a) \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-65">If we now compare components, we see that \(x_{cr}(t) = x_{c}(t)\cos(a) - y_{c}(t)\sin(a)\) and \(y_{cr}(t) = x_{c}(t)\sin(a) + y_{c}(t)\cos(a)\text{.}\)</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="image/miscellaneous-spin_2.png" class="contained" alt=""></div>
+<p id="p-66">Add these new lines of math to your Desmos graph. You should see a copy of the curve, and if you press play on \(a\text{,}\) the graph should start rotating! What a success, right? By the way, my graph is in radians.</p>
+<p id="p-67">As \(a\) increases, the graph rotates counterclockwise. As \(a\) decreases, the graph rotates clockwise.</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.3</span> <span class="title"><em class="emphasis">Dritter Stock:</em> Rotate Around a Specified Point</span>
+</h3>
+<p id="p-68">Perhaps you require the curve to rotate around a certain point. No problem, this can also be done! Given a point of rotation \((x_0, y_0)\text{,}\) we execute another step-oriented process:</p>
+<ol class="decimal">
+<li id="li-9"><p id="p-69">Translate the graph of \((x_{c}(t), y_{c}(t))\) by \(-x_0\) units on the \(x\)-axis and by \(-y_0\) units on the \(y\)-axis.</p></li>
+<li id="li-10"><p id="p-70">Apply the transformation matrix to the translated column vector.</p></li>
+<li id="li-11"><p id="p-71">Translate the resulting graph of \((x_{cr}(t), y_{cr}(t))\) by \(x_0\) units on the \(x\)-axis and by \(y_0\) units on the \(y\)-axis.</p></li>
+</ol>
+<p id="p-72">What this process does is it moves the point of rotation from \((x_0, y_0)\) to the origin, applies the rotation matrix, then moves the point of rotation from the origin back to \((x_0, y_0)\text{.}\)</p>
+<p id="p-73">These steps must be undertaken in this order, as the rotation matrix only rotates around the origin. This is what's going on, mathematically:</p>
+<div class="displaymath">
+\begin{align*}
+(x_{cr}(t), y_{cr}(t)) \amp = \begin{bmatrix} cos(a) &amp; -sin(a) \\ sin(a) &amp; \text{ }cos(a) \end{bmatrix} \left( \begin{bmatrix} x_{c}(t) \\ y_{c}(t) \end{bmatrix} - \begin{bmatrix} x_0 \\ y_0 \end{bmatrix} \right) + \begin{bmatrix} x_0 \\ y_0 \end{bmatrix}\\
+\amp = \begin{bmatrix} (x_{c}(t) - x_0)\cos(a) - (y_{c}(t) - y_0)\sin(a) + x_0 \\ (x_{c}(t)- x_0)\sin(a) + (y_{c}(t) - y_0)\cos(a) + y_0 \end{bmatrix}.
+\end{align*}
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="image/miscellaneous-spin_3.png" class="contained" alt=""></div>
+<p id="p-74">Add what you see in the image to your Desmos graph. The red graph rotates around the Point of Rotation! You can, of course, change the values of \(x_0\) and \(y_0\) to your heart's content, as well as the rate of rotation, etc.</p>
+<p id="p-75">Now, go forth and make your graphs spin!</p></section></section></div></main>
+</div>
+</body>
+</html>

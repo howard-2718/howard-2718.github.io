@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="miscellaneous">
+
+  <title>Miscellaneous Fun</title>
+
+  <introduction>
+    <p>In this chapter, I write about various mathematical topics that tickle my fancy. Beware of shenanigans! </p>
+  </introduction>
+
+  <!---->
+  <!---->
+  <!---->
+  <!-- Calculus in Incremental Game Mechanics -->
+  <!---->
+  <!---->
+  <!---->
+
+  <section xml-id="miscellaneous-incremental">
+    <title>Calculus in Incremental Game Mechanics</title>
+
+    <introduction>
+      <p><em>Incremental games</em>, perhaps better known under the misnomer <em>idle games</em>, are video games whose gameplay centers on the acquisition of in-game currency.</p>
+
+      <p>Roughly speaking, the player spends in-game currencies to increase the rate at which they generate said currencies, which the player then uses to further increase the rate at which they generate said currencies.</p>
+
+      <p>...which they then use to further increase the rate at which they generate said currencies.</p>
+
+      <p>Though not the first game in the genre, the popularity of Orteil's <em>Cookie Clicker</em> in 2013 led to a surge of interest in incremental games, particularly on the flash game site <em>Kongregate</em>. Notable incremental games released since then include <em>Adventure Capitalist</em>, <em>Realm Grinder</em>, and <em>Antimatter Dimensions</em>, among others.</p>
+
+      <p>The history of incremental games is largely beyond the scope of this reading — we're here to do math, not ramble about <em>Cookie Clicker</em>. In this section, we'll take a look at two applications of calculus in incremental games:</p>
+
+      <ol>
+        <li>Optimizing Happiness in <em>Kittens Game</em>, and</li>
+        <li>Modeling Replicanti Growth in <em>Antimatter Dimensions.</em></li>
+      </ol>
+
+      <p>The relevant gameplay mechanics in these examples will be explained, so it is by no means necessary to have previously played either of these games. They are, however, very entertaining, and so I highly recommend anyone to go give them a try.</p>
+    </introduction>
+
+    <!-- Happiness in Kittens Game -->
+    <subsection xml-id="miscellaneous-incremental-happiness">
+      <title>Optimizing Happiness in <em>Kittens Game</em></title>
+
+      <p>Since its release in 2014, <em>Kittens Game</em>,developed by bloodrizer, has gone on to become a cult classic among works in the genre. In <em>Kittens Game</em>, the player is tasked with managing a village of kittens.</p>
+
+      <p>One mechanic in <em>Kittens Game</em> is the management of happiness. Every kitten in the village shares the same happiness value, which is expressed as a percentage.</p>
+
+      <p>Relative to a kitten at 100% happiness, a kitten whose happiness is 50% is only half as productive. Contrast this with a kitten at 120% happiness, who is 120% as productive, somehow. Assuming the player wishes to maximize productivity, it is evident that low happiness is detrimental.</p>
+
+      <p>There are many factors which influence the happiness of the player's kittens, but the main one we will focus on is the mechanic wherein <em>every</em> kitten's happiness goes down by 2% for each kitten 'in excess of 5'. Kittens don't like overpopulation!</p>
+
+      <p>For example, in a village of 6 kittens, each kitten will have a happiness of 98%. This is because the population is 1 greater than the pre-determined threshold of 5. Increasing the population to 16 will decrease every kitten's happiness to 78%.</p>
+
+      <p>Mathematically, this as interpreted as <m>h = 1 - 0.02(p - 5)</m><fn>I'm looking at the behaviour of this function for populations over 5. In the game, the happiness stays at 100% for populations less than 5 kittens.</fn>, where <m>h</m> is the quantity denoting each kitten's happiness, and where <m>p</m> represents the population.</p>
+
+      <p>The happiness of the entire village is consequently <me>h_{total} = p * h = p * (1 - 0.02(p - 5))</me>.</p>
+
+      <p>Those looking to maximize production will therefore wonder: <em>What village population is the most productive?</em> A village with a low population will lack enough kittens to do anything, but a village with too high a population will get nothing done.</p>
+
+      <p>We can feasibly imagine that there is a 'sweet spot' somewhere in the middle, with regard to the population. Let's now go about finding it. First, let <m>h_{total}</m> be notated as a function of <m>p</m>:<me>h_{total}(p) = p * h = p * (1 - 0.02(p - 5)) = 1.1p - 0.02p^2</me>.</p>
+
+      <p>Since this is a quadratic function, we <em>could</em> complete the square to rewrite <m>h_{total}(p)</m> in vertex form, but instead, let's find the maximum using calculus. We'll employ the first derivative to find stationary points, and the second derivative to verify extrema.<fn>Since the function is polynomial, it follows that we can differentiate as much as we want.</fn></p>
+
+      <p>A little bit of differentiation:
+        <md>
+          <mrow>            \amp h_{total}(p) = 1.1p - 0.02p^2</mrow>
+          <mrow>\implies \; \amp h'_{total}(p) = 1.1 - 0.04p</mrow>
+          <mrow>\implies \; \amp h''_{total}(p) = -0.04</mrow>
+        </md>
+      </p>
+
+      <p>If we solve for <m>h'_{total}(p) = 0</m>, we see that <m>p = \frac{1.1}{0.04} = 27.5</m>. For this value of <m>p</m> (actually, for all values of <m>p</m>), the second derivative is negative, so there is definitely a local maximum at <m>p = 27.5</m>.</p>
+
+      <p>We can't exactly have half of a kitten (at least, not without raising serious ethical concerns), so this means that either 27 or 28 kittens is the optimal population for the player's village.</p>
+
+      <p>Alternatively, we know from pre-calculus that the vertex of a parabola is located at <m>p = \frac{b}{2a}</m>, so we could've eschewed the use of calculus by simply calculating <m>p = \frac{1.1}{2 * 0.02} = 27.5</m>.</p>
+
+      <p>To round off this section, let's consider a different mechanic. Luxury items are another factor which affects kitten happiness — for each luxury item in stock, the happiness of every kitten increases by a flat 10%. What effect would these items have on the value of the 'sweet spot'? I'll let you ruminate on that...</p>
+    </subsection>
+
+    <!-- Replicanti in Antimatter Dimensions -->
+    <subsection xml-id="miscellaneous-incremental-replicanti">
+      <title>Modeling Replicanti Growth in <em>Antimatter Dimensions</em></title>
+
+      <p>In <em>Antimatter Dimensions</em>, developed by Hevipelle, the player's goal is to produce antimatter. Antimatter is produced by the titular Antimatter Dimensions, whose efficiency can be increased through the purchase of Infinity Dimensions (it's quite complicated, so don't worry about it).</p>
+
+      <p>Replicanti are a mechanic that further increases antimatter production. When an in-game tick elapses, every replicanti has a chance to replicate. The duration of an in-game tick, as well as the chance of replication, can be improved with upgrades. Simply put, more replicanti leads to more antimatter.</p>
+
+      <p>Let <m>r(i)</m> be the function expressing the amount of replicanti present at a time <m>i</m> in ticks, and let <m>i(t)</m> be the function representing the number of in-game ticks elapsed at this same time <m>t</m>, but now in seconds. Suppose the constants <m>p</m> and <m>d</m> represent the probability of replication and the duration of an in-game tick, respectively.<fn>Note that we've moved on to a different example, so the notation no longer represents what it did previously.</fn></p>
+
+      <p>Our goal is to find an equation for <m>r(i)</m> which accurately models the growth of replicanti. To find said equation, let's approach the problem by taking a look at its derivative, <m>\frac{dr}{di}(i)</m>.</p>
+
+      <p>We know that the rate at which replicanti grow is proportional to the amount of replicanti already present: <me>\frac{dr}{di}(i) = p * r(i)</me>.</p>
+
+      <p>This is, in fact, a differential equation. In fact, it's one of the simplest examples of a differential equation — you may already know what the answer is. Let's multiply both sides by <m>di</m>: <me>dr = p * r(i) \; di</me>.</p>
+
+      <p>Divide both sides by <m>r(i)</m>: <me>\frac{1}{r(i)} \; dr = p \; di</me>.</p>
+
+      <p>Integrate both sides: <me>\int \frac{1}{r(i)} \; dr = \int p \; di</me>.</p>
+
+      <p>Almost there: <me>ln|r(i)| = pi + c</me>.</p>
+
+      <p>And finally, <me>r(i) = Ce^{pi}</me>. There <em>is</em> one caveat, however. We wanted <m>r(t)</m>, not <m>r(i)</m>. Luckily, <m>i</m> and <m>t</m> are closely related through the function <m>i(t)</m>, so our function should actually resemble the following: <me>r(t) = Ce^{pi(t)}</me>.</p>
+
+      <p>As it turns out, <m>i(t) = \frac{t}{d}</m>. For example, if <m>t = 10</m> seconds and <m>d = 0.5 </m> seconds, <m>i(t)</m> would assume a value of <m>\frac{10}{0.5} = 20</m> ticks.</p>
+
+      <p>Therefore, we arrive at a final equation for <m>r(t)</m>: <me>r(t) = Ce^{\frac{p}{d}t}</me>. I bet it's not every day that video games make you think of calculus!</p>
+    </subsection>
+  </section>
+
+  <!---->
+  <!---->
+  <!---->
+  <!-- How to Make Any Graph Spin in Desmos -->
+  <!---->
+  <!---->
+  <!---->
+
+  <section xml-id="miscellaneous-spin">
+    <title>How to Make Any Graph Spin in Desmos</title>
+
+    <introduction>
+      <p>Today, we're gonna mess around in Desmos. That's right, I'll show you how to make any Desmos graph rotate around any location on the plane you want! Fair warning, what's about to unfold is a bit ridiculous.</p>
+
+      <p>The approach we'll take has three main steps, as follows:</p>
+
+      <ol>
+        <li><p>Parameterize the curve into two functions, <m>x(t)</m> and <m>y(t)</m>.</p></li>
+        <li><p>Apply the rotation matrix, <m>\begin{bmatrix} cos(\theta) &amp; -sin(\theta) \\ sin(\theta) &amp; \text{ }cos(\theta) \end{bmatrix}</m> to the column vector <m>\begin{bmatrix} x(t) \\ y(t) \end{bmatrix}</m>.</p></li>
+        <li><p>Create a slider for <m>\theta</m> and let the value of <m>\theta</m> vary over time.</p></li>
+      </ol>
+
+      <p>The first step is usually the hardest.</p>
+    </introduction>
+
+    <!-- Parameterize the graph -->
+    <subsection xml-id="miscellaneous-spin-parameterization">
+      <title><em>Erster Boden:</em> Parameterize the Graph</title>
+
+      <p>To be completely transparent with you, this post is going to be very hand-wavy. I'll show you exactly what you need to do to get your graph rotating, with little further explanation. I really recommend you look deeper into the topics we're going to look at, though. There's a lot of cool stuff here!</p>
+
+      <p>So, let's get started by parameterizing our curve. It'll be good to work with an example, so throughout this post, I'll be making the implicitly-defined curve <m>y^3 + 3xy = 2</m> spin.</p>
+
+      <p>The process follows these steps:</p>
+
+      <ol>
+        <li><p>Solve either for <m>x</m> in terms of <m>y</m>, or for <m>y</m> in terms of <m>x</m>.</p></li>
+        <li><p>If you solved for <m>x</m> in terms of <m>y</m>, let <m>x_{c}(t)</m> equal your expression for <m>x</m> in terms of <m>t</m>, and let <m>y_{c}(t) = t</m>.</p></li>
+        <li><p>If you solved for <m>y</m> in terms of <m>x</m>, let <m>x_{c}(t) = t</m>, and let <m>y_{c}(t)</m> equal your expression for <m>y</m> in terms of <m>t</m>.</p></li>
+      </ol>
+
+      <p>On the other hand, if your curve is already parameterized, then you can skip this whole first section. Convenient!</p>
+
+      <p>Now, for the curve <m>y^3 + 3xy = 2</m>, it'll be easier to solve for <m>x</m> in terms of <m>y</m>, so let's do that: <me> y^3 + 3xy = 2 \implies x = \frac{2 - y^3}{3y}</me>.</p>
+
+      <p>Then we let <m>x_{c}(t) = \frac{2 - t^3}{3t}</m> and <m>y_{c}(t) = t</m>. That's it, our curve is now parameterized! Let's go look at the fruits of our labour in Desmos.</p>
+
+      <image source="image/miscellaneous-spin_1.png" width="100%"/>
+
+      <p>Type what you see in the image above into a new Desmos graph. You should get two identical curves, right on top of each other. It's important to set a large range for the parameterization variable <m>t</m> in order to draw the curve.</p>
+
+      <p>Try messing around with that inequality for <m>t</m> and see what happens.</p>
+
+      <p>With some overly complex curves, simply solving for one variable in terms of the other is not going to work. In that case, you'll have to apply more complicated parameterization techniques — check online! You could also just break the curve up into parts, and spin each part separately.</p>
+    </subsection>
+
+    <!-- Apply rotation matrix -->
+    <subsection xml-id="miscellaneous-spin-matrices">
+      <title><em>Zweiter Stock:</em> Apply the Transformation Matrix</title>
+
+      <p>What the line <m>(x_{c}(t), y_{c}(t))</m> does in Desmos is graph all the points <m>(x, y)</m> on the plane which satisfy the equations <m>x = x_{c}(t)</m> and <m>y = y_{c}(t)</m> as <m>t</m> varies between its lower and upper bound. Unsurprisingly, that traces out the curve in question.</p>
+
+      <p>So now, let's add in the rotation! Doing so is going to require us to venture to the land of linear algebra, as we're going to utilize some matrices. You don't need to know any linear algebra to follow the process, though some of the explanations may fly over your head. That's no problem.</p>
+
+      <p>We can express any point <m>(x, y)</m> in the x-y plane as a 2 by 1 column vector, <m>\begin{bmatrix} x \\ y \end{bmatrix}</m>.</p>
+
+      <p>If we then wish to rotate the point <m>(x, y)</m> around the origin by an angle <m>a</m> to obtain the rotated point <m>(x_{r}, y_{r})</m>, we need to multiply the column vector with the 2D rotation matrix on the left, like so: <me>(x_{r}, y_{r}) = \begin{bmatrix} cos(a) &amp; -sin(a) \\ sin(a) &amp; \text{ }cos(a) \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} x_{r} \\ y_{r} \end{bmatrix}</me>.</p>
+
+      <p>In our case, we're going to multiply using the column vector <m>\begin{bmatrix} x_{c}(t) \\ y_{c}(t) \end{bmatrix}</m>, which represents our curve. A bit of matrix multiplication gives the following: <me> (x_{cr}(t), y_{cr}(t)) = \begin{bmatrix} cos(a) &amp; -sin(a) \\ sin(a) &amp; \text{ }cos(a) \end{bmatrix} \begin{bmatrix} x_{c}(t) \\ y_{c}(t) \end{bmatrix} = \begin{bmatrix} x_{c}(t)\cos(a) - y_{c}(t)\sin(a) \\ x_{c}(t)\sin(a) + y_{c}(t)\cos(a) \end{bmatrix}</me>.</p>
+
+      <p>If we now compare components, we see that <m>x_{cr}(t) = x_{c}(t)\cos(a) - y_{c}(t)\sin(a)</m> and <m>y_{cr}(t) = x_{c}(t)\sin(a) + y_{c}(t)\cos(a)</m>.</p>
+
+      <image source="image/miscellaneous-spin_2.png" width="100%"/>
+
+      <p>Add these new lines of math to your Desmos graph. You should see a copy of the curve, and if you press play on <m>a</m>, the graph should start rotating! What a success, right? By the way, my graph is in radians.</p>
+
+      <p>As <m>a</m> increases, the graph rotates counterclockwise. As <m>a</m> decreases, the graph rotates clockwise.</p>
+    </subsection>
+
+    <!-- Extra steps for rotation around a certain point -->
+    <!-- Rotation matrices rotate around the origin, so we displace the original graph by (-x_r, -y_r), which moves the point of rotation (x_r, y_r) to the origin, then add back (x_r, y_r) after applying the rotation matrix -->
+    <subsection xml-id="miscellaneous-spin-point">
+      <title><em>Dritter Stock:</em> Rotate Around a Specified Point</title>
+
+      <p>Perhaps you require the curve to rotate around a certain point. No problem, this can also be done! Given a point of rotation <m>(x_0, y_0)</m>, we execute another step-oriented process:</p>
+
+      <ol>
+        <li><p>Translate the graph of <m>(x_{c}(t), y_{c}(t))</m> by <m>-x_0</m> units on the <m>x</m>-axis and by <m>-y_0</m> units on the <m>y</m>-axis.</p></li>
+        <li><p>Apply the transformation matrix to the translated column vector.</p></li>
+        <li><p>Translate the resulting graph of <m>(x_{cr}(t), y_{cr}(t))</m> by <m>x_0</m> units on the <m>x</m>-axis and by <m>y_0</m> units on the <m>y</m>-axis.</p></li>
+      </ol>
+
+      <p>What this process does is it moves the point of rotation from <m>(x_0, y_0)</m> to the origin, applies the rotation matrix, then moves the point of rotation from the origin back to <m>(x_0, y_0)</m>.</p>
+
+      <p>These steps must be undertaken in this order, as the rotation matrix only rotates around the origin. This is what's going on, mathematically: 
+        <md>
+          <mrow>(x_{cr}(t), y_{cr}(t)) \amp = \begin{bmatrix} cos(a) &amp; -sin(a) \\ sin(a) &amp; \text{ }cos(a) \end{bmatrix} \left( \begin{bmatrix} x_{c}(t) \\ y_{c}(t) \end{bmatrix} - \begin{bmatrix} x_0 \\ y_0 \end{bmatrix} \right) + \begin{bmatrix} x_0 \\ y_0 \end{bmatrix}</mrow>
+          <mrow>\amp = \begin{bmatrix} (x_{c}(t) - x_0)\cos(a) - (y_{c}(t) - y_0)\sin(a) + x_0 \\ (x_{c}(t)- x_0)\sin(a) + (y_{c}(t) - y_0)\cos(a) + y_0 \end{bmatrix}.</mrow>
+        </md>
+      </p>
+
+      <image source="image/miscellaneous-spin_3.png" width="100%"/>
+
+      <p>Add what you see in the image to your Desmos graph. The red graph rotates around the Point of Rotation! You can, of course, change the values of <m>x_0</m> and <m>y_0</m> to your heart's content, as well as the rate of rotation, etc.</p>
+
+      <p>Now, go forth and make your graphs spin!</p>
+    </subsection>
+  </section>
+
+</chapter>
