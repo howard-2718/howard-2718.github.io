@@ -158,7 +158,7 @@
 
       <image source="image/miscellaneous-spin_1.png" width="100%"/>
 
-      <p>Type what you see in the image above into a new Desmos graph. You should get two identical curves, right on top of each other. It's important to set a large range for the parameterization variable <m>t</m> in order to draw the curve.</p>
+      <p>Type what you see in the image above into a new Desmos graph. <em>If the picture is blurry, try zooming in on your browser or opening the image in a new tab</em>. You should get two identical curves, right on top of each other. It's important to set a large range for the parameterization variable <m>t</m> in order to draw the curve.</p>
 
       <p>Try messing around with that inequality for <m>t</m> and see what happens.</p>
 
