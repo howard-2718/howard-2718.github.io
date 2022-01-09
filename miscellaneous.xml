@@ -214,6 +214,8 @@
 
       <p>Add what you see in the image to your Desmos graph. The red graph rotates around the Point of Rotation! You can, of course, change the values of <m>x_0</m> and <m>y_0</m> to your heart's content, as well as the rate of rotation, etc.</p>
 
+      <p>I've created an example Desmos project for you to fiddle around with. Click <url href="https://www.desmos.com/calculator/a5glisxpi6/">here</url>.</p>
+
       <p>There are, of course, other methods to rotate a curve in Desmos, and I hope you find this approach relatively simple. Now, go forth and make your graphs spin!</p>
     </subsection>
   </section>
