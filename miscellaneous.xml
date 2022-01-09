@@ -136,7 +136,7 @@
 
     <!-- Parameterize the graph -->
     <subsection xml-id="miscellaneous-spin-parameterization">
-      <title><em>Erster Boden:</em> Parameterize the Graph</title>
+      <title><em>Erster Ablauf:</em> Parameterize the Graph</title>
 
       <p>To be completely transparent with you, this post is going to be very hand-wavy. I'll show you exactly what you need to do to get your graph rotating, with little further explanation. I really recommend you look deeper into the topics we're going to look at, though. There's a lot of cool stuff here!</p>
 
@@ -167,7 +167,7 @@
 
     <!-- Apply rotation matrix -->
     <subsection xml-id="miscellaneous-spin-matrices">
-      <title><em>Zweiter Stock:</em> Apply the Transformation Matrix</title>
+      <title><em>Zweiter Ablauf:</em> Apply the Transformation Matrix</title>
 
       <p>What the line <m>(x_{c}(t), y_{c}(t))</m> does in Desmos is graph all the points <m>(x, y)</m> on the plane which satisfy the equations <m>x = x_{c}(t)</m> and <m>y = y_{c}(t)</m> as <m>t</m> varies between its lower and upper bound. Unsurprisingly, that traces out the curve in question.</p>
 
@@ -191,7 +191,7 @@
     <!-- Extra steps for rotation around a certain point -->
     <!-- Rotation matrices rotate around the origin, so we displace the original graph by (-x_r, -y_r), which moves the point of rotation (x_r, y_r) to the origin, then add back (x_r, y_r) after applying the rotation matrix -->
     <subsection xml-id="miscellaneous-spin-point">
-      <title><em>Dritter Stock:</em> Rotate Around a Specified Point</title>
+      <title><em>Dritter Ablauf:</em> Rotate Around a Specified Point</title>
 
       <p>Perhaps you require the curve to rotate around a certain point. No problem, this can also be done! Given a point of rotation <m>(x_0, y_0)</m>, we execute another step-oriented process:</p>
 
@@ -214,7 +214,7 @@
 
       <p>Add what you see in the image to your Desmos graph. The red graph rotates around the Point of Rotation! You can, of course, change the values of <m>x_0</m> and <m>y_0</m> to your heart's content, as well as the rate of rotation, etc.</p>
 
-      <p>Now, go forth and make your graphs spin!</p>
+      <p>There are, of course, other methods to rotate a curve in Desmos, and I hope you find this approach relatively simple. Now, go forth and make your graphs spin!</p>
     </subsection>
   </section>
 

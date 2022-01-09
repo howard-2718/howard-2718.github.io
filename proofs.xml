@@ -19,11 +19,10 @@
   <section xml-id="proofs-cauchy_schwarz">
     <title>Mathematical Induction and the Cauchy-Schwarz Inequality</title>
 
-    <!-- Refer to my desmos graph for all the workings -->
     <introduction>
       <p>The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
 
-      <p>In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: The Principle of Mathematical Induction.</p>
+      <p>In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: mathematical induction. This proof is one which I formulated independently — I was inspired to do so after seeing a related problem posted on a Discord server I visit.</p>
 
       <p>Mathematical induction is a great tool to have your inventory, but is sort of a hassle to explain, so I won't do that here. Use the power of the internet! Some sources which I think do a good job covering the topic are <url href="https://brilliant.org/wiki/induction/">here</url> and <url href="https://www.mathsisfun.com/algebra/mathematical-induction.html">here</url>.</p>
     </introduction>
@@ -34,7 +33,7 @@
 
       <p>The version of the Cauchy-Schwarz Inequality which follows this paragraph — and which we're going to prove — is a bit abridged, for the sake of simplicity. Don't worry, it's still perfectly valid. It's just missing an extra condition for equality.</p>
 
-      <p>The proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible.</p>
+      <p>As previously mentioned, the proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible. It also mainly relies on high-school level algebra.</p>
 
       <theorem>
         <title>Cauchy-Schwarz Inequality (Truncated)</title>

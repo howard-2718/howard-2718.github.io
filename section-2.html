@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-07T23:49:05-08:00       *-->
+<!--*       on 2022-01-08T16:58:43-08:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -100,7 +100,7 @@
 <li id="li-5"><p id="p-46">Create a slider for \(\theta\) and let the value of \(\theta\) vary over time.</p></li>
 </ol>
 <p id="p-47">The first step is usually the hardest.</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title"><em class="emphasis">Erster Boden:</em> Parameterize the Graph</span>
+<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title"><em class="emphasis">Erster Ablauf:</em> Parameterize the Graph</span>
 </h3>
 <p id="p-48">To be completely transparent with you, this post is going to be very hand-wavy. I'll show you exactly what you need to do to get your graph rotating, with little further explanation. I really recommend you look deeper into the topics we're going to look at, though. There's a lot of cool stuff here!</p>
 <p id="p-49">So, let's get started by parameterizing our curve. It'll be good to work with an example, so throughout this post, I'll be making the implicitly-defined curve \(y^3 + 3xy = 2\) spin.</p>
@@ -122,7 +122,7 @@ y^3 + 3xy = 2 \implies x = \frac{2 - y^3}{3y}\text{.}
 <p id="p-57">Type what you see in the image above into a new Desmos graph. <em class="emphasis">If the picture is blurry, try zooming in on your browser or opening the image in a new tab</em>. You should get two identical curves, right on top of each other. It's important to set a large range for the parameterization variable \(t\) in order to draw the curve.</p>
 <p id="p-58">Try messing around with that inequality for \(t\) and see what happens.</p>
 <p id="p-59">With some overly complex curves, simply solving for one variable in terms of the other is not going to work. In that case, you'll have to apply more complicated parameterization techniques — check online! You could also just break the curve up into parts, and spin each part separately.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title"><em class="emphasis">Zweiter Stock:</em> Apply the Transformation Matrix</span>
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title"><em class="emphasis">Zweiter Ablauf:</em> Apply the Transformation Matrix</span>
 </h3>
 <p id="p-60">What the line \((x_{c}(t), y_{c}(t))\) does in Desmos is graph all the points \((x, y)\) on the plane which satisfy the equations \(x = x_{c}(t)\) and \(y = y_{c}(t)\) as \(t\) varies between its lower and upper bound. Unsurprisingly, that traces out the curve in question.</p>
 <p id="p-61">So now, let's add in the rotation! Doing so is going to require us to venture to the land of linear algebra, as we're going to utilize some matrices. You don't need to know any linear algebra to follow the process, though some of the explanations may fly over your head. That's no problem.</p>
@@ -143,7 +143,7 @@ y^3 + 3xy = 2 \implies x = \frac{2 - y^3}{3y}\text{.}
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="image/miscellaneous-spin_2.png" class="contained" alt=""></div>
 <p id="p-66">Add these new lines of math to your Desmos graph. You should see a copy of the curve, and if you press play on \(a\text{,}\) the graph should start rotating! What a success, right? By the way, my graph is in radians.</p>
 <p id="p-67">As \(a\) increases, the graph rotates counterclockwise. As \(a\) decreases, the graph rotates clockwise.</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.2.3</span> <span class="title"><em class="emphasis">Dritter Stock:</em> Rotate Around a Specified Point</span>
+<span class="type">Subsection</span> <span class="codenumber">1.2.3</span> <span class="title"><em class="emphasis">Dritter Ablauf:</em> Rotate Around a Specified Point</span>
 </h3>
 <p id="p-68">Perhaps you require the curve to rotate around a certain point. No problem, this can also be done! Given a point of rotation \((x_0, y_0)\text{,}\) we execute another step-oriented process:</p>
 <ol class="decimal">
@@ -161,7 +161,7 @@ y^3 + 3xy = 2 \implies x = \frac{2 - y^3}{3y}\text{.}
 </div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="image/miscellaneous-spin_3.png" class="contained" alt=""></div>
 <p id="p-74">Add what you see in the image to your Desmos graph. The red graph rotates around the Point of Rotation! You can, of course, change the values of \(x_0\) and \(y_0\) to your heart's content, as well as the rate of rotation, etc.</p>
-<p id="p-75">Now, go forth and make your graphs spin!</p></section></section></div></main>
+<p id="p-75">There are, of course, other methods to rotate a curve in Desmos, and I hope you find this approach relatively simple. Now, go forth and make your graphs spin!</p></section></section></div></main>
 </div>
 </body>
 </html>
