@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-08T21:56:49-08:00       *-->
+<!--*       on 2022-01-20T13:37:00-08:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,7 +11,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Mathematical Induction and the Cauchy-Schwarz Inequality</title>
+<title>\(\mathbb{C} \times \mathbb{R}\text{:}\) A Short Thought Experiment</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>window.MathJax = {
@@ -63,10 +63,10 @@
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="proofs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="proofs.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="proofs.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="proofs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="proofs.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a class="next-button button toolbar-item" href="proofs.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -82,176 +82,187 @@
 <a href="miscellaneous.html" data-scroll="miscellaneous"><span class="codenumber">1</span> <span class="title">Miscellaneous Fun</span></a><ul>
 <li><a href="section-1.html" data-scroll="section-1">Calculus in Incremental Game Mechanics</a></li>
 <li><a href="section-2.html" data-scroll="section-2">How to Make Any Graph Spin in Desmos</a></li>
+<li><a href="section-3.html" data-scroll="section-3" class="active">\(\mathbb{C} \times \mathbb{R}\text{:}\) A Short Thought Experiment</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="proofs.html" data-scroll="proofs"><span class="codenumber">2</span> <span class="title">Proofs, Proofs...</span></a><ul><li><a href="section-3.html" data-scroll="section-3" class="active">Mathematical Induction and the Cauchy-Schwarz Inequality</a></li></ul>
+<a href="proofs.html" data-scroll="proofs"><span class="codenumber">2</span> <span class="title">Proofs, Proofs...</span></a><ul><li><a href="section-4.html" data-scroll="section-4">Mathematical Induction and the Cauchy-Schwarz Inequality</a></li></ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-3"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Mathematical Induction and the Cauchy-Schwarz Inequality</span>
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">\(\mathbb{C} \times \mathbb{R}\text{:}\) A Short Thought Experiment</span>
 </h2>
-<section class="introduction" id="introduction-5"><p id="p-78">The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
-<p id="p-79">In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: mathematical induction. This proof is one which I formulated independently — I was inspired to do so after seeing a related problem posted on a Discord server I visit.</p>
-<p id="p-80">Mathematical induction is a great tool to have your inventory, but is sort of a hassle to explain, so I won't do that here. Use the power of the internet! Some sources which I think do a good job covering the topic are <a class="external" href="https://brilliant.org/wiki/induction/" target="_blank">here</a> and <a class="external" href="https://www.mathsisfun.com/algebra/mathematical-induction.html" target="_blank">here</a>.</p></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Laying the Proverbial Groundwork</span>
+<section class="introduction" id="introduction-4"><p id="p-79"><em class="emphasis">January 20th, 2022</em></p>
+<p id="p-80">Do you like \(\mathbb{C}\text{?}\) And do you like \(\mathbb{R}\text{?}\) If your answer to both those questions is 'yes', then <em class="emphasis">obviously</em>, the logical thing to consider afterwards is the holy matrimony of \(\mathbb{C}\) and \(\mathbb{R}\text{.}\)</p>
+<p id="p-81">Now presenting to you... \(\mathbb{C} \times \mathbb{R}\text{.}\) Let's get to know our new married couple.</p>
+<p id="p-82">A sensible first question to ask is "what exactly is the set \(\mathbb{C} \times \mathbb{R}\) comprised of"? Well, following the definition of the Cartesian product, we see that</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbb{C} \times \mathbb{R} = \{ (a, b) \: | \: a \in \mathbb{C} \land b \in \mathbb{R} \}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">An example of an element in \(\mathbb{C} \times \mathbb{R}\) is \((1 + 5i, \: 4)\text{.}\) I'm sure you'll agree with me that \(1 + 5i \in \mathbb{C}\) and \(4 \in \mathbb{R}\text{.}\) So then, the contents of this blog post are dedicated to considering some interesting properties of this unusual set.</p>
+<p id="p-83">A basic understanding of the following concepts on the part of the reader would go a long way: <em class="emphasis">complex numbers, set theory, fields, cardinalities of infinite sets, bijective maps, proofs of injectivity and surjectivity</em>.</p></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">An Attempt to Define \(\mathbb{C} \times \mathbb{R}\) as a Field</span>
 </h3>
-<p id="p-81">The version of the Cauchy-Schwarz Inequality which follows this paragraph — and which we're going to prove — is a bit abridged, for the sake of simplicity. Don't worry, it's still perfectly valid. It's just missing an extra condition for equality.</p>
-<p id="p-82">As previously mentioned, the proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible. It also mainly relies on high-school level algebra.</p>
-<article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz Inequality (Truncated).</span>
-</h6>
-<p id="p-83">For all sequences of real numbers \(a_{i}\) and \(b_{i}\text{,}\) the following inequality holds:</p>
+<p id="p-84">In mathematics, we define a field to be a set \(S\) on which the binary operations of addition and multiplication are defined, with the additional requirement that the following list of properties hold:</p>
+<ol class="decimal">
+<li id="li-12"><p id="p-85">\(a + b \in S\) and \(a \cdot b \in S\text{.}\)</p></li>
+<li id="li-13"><p id="p-86">\(a + (b + c) = (a + b) + c\) and \(a \cdot (b \cdot c) = (a \cdot b) \cdot c\text{.}\)</p></li>
+<li id="li-14"><p id="p-87">\(a + b = b + a\) and \(a \cdot b = b \cdot a\text{.}\)</p></li>
+<li id="li-15"><p id="p-88">\(a \cdot (b + c) = (a \cdot b) + (a \cdot c)\text{.}\)</p></li>
+<li id="li-16"><p id="p-89">\(\exists e_{add} \in S \: | \: a + e_{add} = a\text{.}\)</p></li>
+<li id="li-17"><p id="p-90">\(\exists e_{mul} \in S \: | \: a \cdot e_{mul} = a\text{.}\)</p></li>
+<li id="li-18"><p id="p-91">\(\forall a \in S, \exists -a \in S \: | \: a + (-a) = e_{add}\text{.}\)</p></li>
+<li id="li-19"><p id="p-92">\(\forall a \neq 0 \in S, \exists a^{-1} \in S \: | \: a \cdot a^{-1} = e_{mul}\text{,}\)</p></li>
+</ol>
+<p id="p-93">where \(a\text{,}\) \(b\text{,}\) and \(c\) are any elements of \(S\text{.}\) In this context, \(e_{add}\) is known as the additive identity and \(e_{mul}\) is known as the multiplicative identity.</p>
+<p id="p-94">We now wish to define addition and multiplication on our set \(\mathbb{C} \times \mathbb{R}\) in a way that satisfies all the properties of a field. There are a lot of potential starting options, but I would like to propose what I think is the most natural approach.</p>
+<p id="p-95">Before that, though, here's some more notation. Let</p>
 <div class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{n} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{n} a_{i}^2 \right) \left( \sum_{i = 1}^{n} b_{i}^2 \right)\text{.}
-\end{equation*}
-</div></article><p id="p-84">From the statement of the theorem, it should become apparent why one might be motivated to use mathematical induction as the proof technique. In this context, \(n\) can only assume values in \(\mathbb{Z}^+\text{,}\) so it makes for a good opportunity to utilize induction.</p>
-<p id="p-85">So then, let's get started on that proof! First, we'll consider the base case of \(n = 1\text{,}\) which is quite trivial. We see that</p>
-<div class="displaymath">
-\begin{equation*}
-(a_{1} b_{1})^2 \leq a_{1}^2 b_{1}^2\text{,}
-\end{equation*}
-</div>
-<p class="continuation">which is obviously true. The crux of the proof lies in showing that</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
+a = (x_a + iy_a, \: z_a) \qquad b = (x_b + iy_b, \: z_b) \qquad c = (x_c + iy_c, \: z_c)
 \end{equation*}
 </div>
-<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{.}\)</p></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">It's Always the Algebra...</span>
+<p class="continuation">be three arbitrary elements of \(\mathbb{C} \times \mathbb{R}\text{,}\) with \(x_{abc}, \: y_{abc}, \: z_{abc} \in \mathbb{R}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-4" id="fn-4"><sup> 1 </sup></a>. We now define addition and multiplication in the following manner:</p>
+<div class="displaymath">
+\begin{gather*}
+a + b = (x_a + iy_a, \: z_a) + (x_b + iy_b, \: z_b) = (x_a + x_b + i(y_a + y_b), \: z_a + z_b)\\
+a \cdot b = (x_a + iy_a, \: z_a) \cdot (x_b + iy_b, \: z_b) = (x_a x_b - y_a y_b + i(x_a y_b + x_b y_a), \: z_a z_b).
+\end{gather*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-4"><div class="fn">Please note that, in this context, \(z\) refers strictly to <em class="emphasis">real</em> numbers!</div></div>
+<p id="p-96">I think this is a fairly pragmatic way of going about the matter, as we are simply adding and multiplying the complex and real components of \(a\) and \(b\) separately.</p>
+<p id="p-97">The rest of this subsection is used to prove that this particular definition of addition and multiplication satisfy the aforementioned properties of a field.</p>
+<p id="p-98">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-99">1. \(a + b \in S\) and \(a \cdot b \in S\text{.}\) <em class="emphasis">The set</em> \(S\) <em class="emphasis">is closed under addition and multiplication</em>. Per our definition of addition, \(a + b = (x_a + x_b + i(y_a + y_b), \: z_a + z_b)\text{.}\) Since \(x_a + x_b + i(y_a + y_b) \in \mathbb{C}\) and \(z_a + z_b \in \mathbb{R}\text{,}\) it follows that \(a + b \in S\text{.}\) A similar argument shows that \(a \cdot b \in S\text{.}\)</p>
+<p id="p-100">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-101">2. \(a + (b + c) = (a + b) + c\) and \(a \cdot (b \cdot c) = (a \cdot b) \cdot c\text{.}\) <em class="emphasis">Addition and multiplication are associative</em>. Observe that</p>
+<div class="displaymath">
+\begin{align*}
+a + (b + c) \amp = (x_a + iy_a, \: z_a) + (x_b + x_c + i(y_b + y_c), \: z_b + z_c)\\
+\amp = (x_a + x_b + x_c + i(y_a + y_b + y_c), \: z_a + z_b + z_c)\\
+\amp = (x_a + x_b + i(y_a + y_b), \: z_a + z_b) + (x_c + iy_c, \: z_c)\\
+\amp = (a + b) + c.
+\end{align*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+a \cdot (b \cdot c) \amp = (x_a + iy_a, \: z_a) \cdot (x_b x_c - y_b y_c + i(x_b y_c + x_c y_b), \: z_b z_c)\\
+\amp = (x_a x_b x_c - x_a y_b y_c - y_a x_b y_c - y_a y_b x_c + i(x_a x_b y_c + x_a y_b x_c + y_a x_b x_c - y_a y_b y_c), \: z_a z_b z_c)\\
+\amp = (x_a x_b - y_a y_b + i(x_a y_b + x_b y_a), \: z_a z_b) \cdot (x_c + iy_c, \: z_c)\\
+\amp = (a \cdot b) \cdot c.
+\end{align*}
+</div>
+<p class="continuation">Therefore addition and multiplication are associative<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-5" id="fn-5"><sup> 2 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-5"><div class="fn">On an unrelated side note, I think I'm going to go blind.</div></div>
+<p id="p-102">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-103">3. \(a + b = b + a\) and \(a \cdot b = b \cdot a\text{.}\) <em class="emphasis">Addition and multiplication are commutative</em>. Observe that</p>
+<div class="displaymath">
+\begin{align*}
+a + b \amp = (x_a + iy_a, \: z_a) + (x_b + iy_b, \: z_b)\\
+\amp = (x_a + x_b + i(y_a + y_b), \: z_a + z_b)\\
+\amp = (x_b + x_a + i(y_b + y_a), \: z_b + z_a)\\
+\amp = (x_b + iy_b, \: z_b) + (x_a + iy_a, \: z_a)\\
+\amp = b + a.
+\end{align*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+a \cdot b \amp = (x_a + iy_a, \: z_a) \cdot (x_b + iy_b, \: z_b)\\
+\amp = (x_a x_b - y_a y_b + i(x_a y_b + x_b y_a), \: z_a z_b)\\
+\amp = (x_b x_a - y_b y_a + i(x_b y_a + x_a y_b), \: z_b z_a)\\
+\amp = (x_b + iy_b, \: z_b) \cdot (x_a + iy_a, \: z_a)\\
+\amp = b \cdot a.
+\end{align*}
+</div>
+<p class="continuation">Therefore addition and multiplication are commutative.</p>
+<p id="p-104">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-105">4. \(a \cdot (b + c) = (a \cdot b) + (a \cdot c)\text{.}\) <em class="emphasis">Multiplication is distributive over addition.</em> We have</p>
+<div class="displaymath">
+\begin{align*}
+a \cdot (b + c) \amp = (x_a + iy_a, \: z_a) \cdot (x_b + x_c + i(y_b + y_c), \: z_b + z_c)\\
+\amp = (x_a x_b + x_a x_c - y_a y_b - y_a y_c + ix_a y_b + ix_a y_c + iy_a x_b + iy_a x_c, \: z_a z_b + z_a z_c)\\
+\amp = ((x_a x_b - y_a y_b + i(x_a y_b + y_a x_b)) + (x_a x_c - y_a y_c + i(x_a y_c + y_a x_c)), \: z_a z_b + z_a z_c)\\
+\amp = (a \cdot b) + (a \cdot c).
+\end{align*}
+</div>
+<p id="p-106">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-107">5. \(\exists e_{add} \in S \: | \: a + e_{add} = a\text{.}\) <em class="emphasis">There exists an additive identity</em> \(e_{add}\) <em class="emphasis">such that for every element</em> \(a\) <em class="emphasis">in</em> \(S\) <em class="emphasis">,</em> \(a + e_{add} = a\text{.}\) Let \(e_{add} = (0 + 0i, \: 0)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+a + e_{add} = (x_a + iy_a, \: z_a) + (0 + 0i, \: 0) = (x_a + 0 + i(y_a + 0), \: z_a + 0) = (x_a + iy_a, \: z_a) = a.
+\end{equation*}
+</div>
+<p id="p-108">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-109">6. \(\exists e_{mul} \in S \: | \: a \cdot e_{mul} = a\text{.}\) <em class="emphasis">There exists a multiplicative identity</em> \(e_{mul}\) <em class="emphasis">such that for every element</em> \(a\) <em class="emphasis">in</em> \(S\) <em class="emphasis">,</em> \(a \cdot e_{mul} = a\text{.}\) Let \(e_{mul} = (1 + 0i, \: 1)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+a \cdot e_{mul} = (x_a + iy_a, \: z_a) \cdot (1 + 0i, \: 1) = (x_a + iy_a, \: z_a) = a.
+\end{equation*}
+</div>
+<p id="p-110">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-111">7. \(\forall a \in S, \exists -a \in S \: | \: a + (-a) = e_{add}\text{.}\) <em class="emphasis">Every element</em> \(a\) <em class="emphasis">in</em> \(S\) <em class="emphasis">has an additive inverse</em> \(-a\) <em class="emphasis">such that</em> \(a + (-a) = e_{add}\text{.}\) Let \(-a = (-x_a - iy_a, \: -z_a)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+a + (-a) \amp = (x_a + iy_a, \: z_a) + (-x_a - iy_a, \: -z_a)\\
+\amp = (x_a - x_a + i(y_a - y_a), \: z_a - z_a) \\
+\amp = (0 + 0i, \: 0)\\
+\amp = e_{add}.
+\end{align*}
+</div>
+<p id="p-112">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-113">8. \(\forall a \neq 0 \in S, \exists a^{-1} \in S \: | \: a \cdot a^{-1} = e_{mul}\text{.}\) <em class="emphasis">Every non-zero element</em> \(a\) <em class="emphasis">in</em> \(S\) <em class="emphasis">has a multiplicative inverse</em> \(a^{-1}\) <em class="emphasis">such that</em> \(a \cdot a^{-1} = e_{mul}\text{.}\) Let \(d = a^{-1} = (x_d + iy_d, \: z_d)\text{.}\) We now solve for \(x_d\text{,}\) \(y_d\text{,}\) and \(z_d\) in terms of \(x_a\text{,}\) \(y_a\text{,}\) and \(z_a\text{.}\) Observe that</p>
+<div class="displaymath">
+\begin{align*}
+a \cdot d \amp = (x_a + iy_a, \: z_a) \cdot (x_d + iy_d, \: z_d) = (1 + 0i, \: 1)\\
+\implies (1 + 0i, \: 1) \amp = (x_a + iy_a, \: z_a) \cdot (x_d + iy_d, \: z_d)\\
+\implies (1 + 0i, \: 1) \amp = (x_a x_d - y_a y_d + i(x_a y_d + x_d y_a), \: z_a z_d)
+\end{align*}
+</div>
+<p class="continuation">We then are presented with the following three equations:</p>
+<div class="displaymath">
+\begin{equation*}
+x_a x_d - y_a y_d = 1, \qquad x_a y_d + x_d y_a = 0, \qquad z_a z_d = 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The first two equations form a nice system of equations. After some algebra, we see that</p>
+<div class="displaymath">
+\begin{equation*}
+x_d = \frac{x_a}{x_a^2 + y_a^2}, \qquad y_d = \frac{-y_a}{x_a^2 + y_a^2}, \qquad z_d = \frac{1}{z_a}.
+\end{equation*}
+</div>
+<p class="continuation">Hence, we see that</p>
+<div class="displaymath">
+\begin{equation*}
+a^{-1} = \left(\frac{x_a}{x_a^2 + y_a^2} - i\frac{y_a}{x_a^2 + y_a^2}, \: \frac{1}{z_a}\right).
+\end{equation*}
+</div>
+<p class="continuation">Unfortunately, this is where tragedy strikes. You may have noticed that all elements of the form \((x_a + iy_a, \: 0)\) lack a multiplicative inverse, as \(\frac{1}{0}\) is not defined.</p>
+<p id="p-114">----------------------------------------------------------------------------------------------------------------------</p>
+<p id="p-115">So, this definition of addition and multiplication was very close to satisfying all the properties of a field, but could not fulfill this last requirement. If it's any consolation, we have at least shown that \(\mathbb{C} \times \mathbb{R}\) is a commutative ring under these addition and multiplication operations.</p>
+<p id="p-116">There may exist a definition of addition and multiplication which makes the set \(\mathbb{C} \times \mathbb{R}\) into a field, but I am not sure. This is somewhat similar to how \(\mathbb{R}^3\) is not a field when multiplication is defined component-wise. Indeed, there seem to be many analogues between the set \(\mathbb{C} \times \mathbb{R}\) and \(\mathbb{R}^3\text{.}\)</p>
+<p id="p-117">Speaking of which...</p></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">The Cardinality of \(\mathbb{C} \times \mathbb{R}\)</span>
 </h3>
-<p id="p-86">We want to make use of our inductive step, which is our assumption that</p>
+<p id="p-118">There are obviously an uncountably infinite amount of elements in \(\mathbb{C} \times \mathbb{R}\text{,}\) but we can still get a feel for the cardinality of this set, \(|\mathbb{C} \times \mathbb{R}|\text{.}\) In particular, I claim that \(|\mathbb{C} \times \mathbb{R}| = |\mathbb{R}|\text{.}\)</p>
+<p id="p-119">There is more than one way to show that this is true, and we will explore one such method involving bijective maps. By definition, two sets have the same cardinality if there exists a bijection from one set to the other.</p>
+<p id="p-120">Therefore, finding a bijection from \(\mathbb{C} \times \mathbb{R}\) to \(\mathbb{R}\) will prove that these two sets share the same cardinality. However, such a task is a little difficult. Instead, we are going to be a little cheeky and make use of a proven fact that \(|\mathbb{R}^3| = |\mathbb{R}|\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 3 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn">Refer to <a class="external" href="https://math.stackexchange.com/questions/243590/bijection-from-mathbb-r-to-mathbb-rn" target="_blank">this</a> post for an explanation of this result</div></div>
+<p id="p-121">So instead, we will find a bijective map \(f\text{,}\) where \(f: \mathbb{C} \times \mathbb{R} \rightarrow \mathbb{R}^3\text{.}\) The most sensible thing to first try is, in my opinion, the map \((x + iy, \: z) \mapsto (x, \: y, \: z)\text{.}\) We now show that \(f\) is injective and surjective.</p>
+<p id="p-122">Let \(a = (x_a + iy_a, \: z_a)\) and \(b = (x_b + iy_b, \: z_b)\) represent two arbitrary elements in \(\mathbb{C} \times \mathbb{R}\text{,}\) and suppose \(f(a) = f(b)\text{.}\) It then follows that \((x_a, y_a, z_a) = (x_b, y_b, z_b)\) and so we have</p>
 <div class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right)\text{.}
+x_a = x_b \qquad y_a = y_b \qquad z_a = z_b\text{,}
 \end{equation*}
 </div>
-<p id="p-87">This should motivate us to express \(\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2\) in terms of \(\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2\text{.}\) Let's write the left hand side out:</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})\text{.}
-\end{equation*}
-</div>
-<p id="p-88">How does this quantity differ from the other one? Well, note that in addition to the multiplication of</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})\text{,}
-\end{equation*}
-</div>
-<p class="continuation">we also require the last term, \(a_{k+1} b_{k+1}\text{,}\) in the left factor to be distributed to all the terms in the right factor, and vice versa. Since the two factors are the same, that'll result in an additional quantity of</p>
-<div class="displaymath">
-\begin{equation*}
-2 \cdot (a_1 b_1 a_{k+1} b_{k+1} + a_2 b_2 a_{k+1} b_{k+1} + ... + a_{k} b_{k} a_{k+1} b_{k+1} + a_{k+1} b_{k+1} a_{k+1} b_{k+1})\text{.}
-\end{equation*}
-</div>
-<p id="p-89">Therefore,</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-90">Feel free to expand these summations to double-check. Now, the appearance of the middle term marks a good time to invoke the inductive step:</p>
-<div class="displaymath">
-\begin{align*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
-\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right).
-\end{align*}
-</div>
-<p id="p-91">This is a good time to compare the quantity</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)
-\end{equation*}
-</div>
-<p class="continuation">with that of</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-92">Namely, if we can show that the top quantity is less or equal than the bottom quantity, then the proof is complete. Let's expand this latter quantity out:</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = (a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2)\text{.}
-\end{equation*}
-</div>
-<p id="p-93">In a manner similar to what occurred previously, we observe that<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-4" id="fn-4"><sup> 1 </sup></a></p>
-<div class="displaymath">
-\begin{align*}
-(a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2) = \text{ } \amp (a_1^2 + a_2^2 + ... + a_{k}^2)(b_1^2 + b_2^2 + ... + b_{k}^2) \text{ } +\\
-\amp (a_1^2 b_{k+1}^2 + a_2^2 b_{k+1}^2 + ... + a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2) \text{ } +\\
-\amp (a_{k+1}^2 b_1^2 + a_{k+1}^2 b_2^2 + ... + a_{k+1}^2 b_{k}^2 + a_{k+1}^2 b_{k+1}^2).
-\end{align*}
-</div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-4"><div class="fn">It's not real math unless it runs off the page!</div></div>
-<p id="p-94">In summation notation, we obtain</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Approaching an Apex; Alternatively, an Apotheosis</span>
-</h3>
-<p id="p-95">At this point, we should begin to envision what the final result will look like. If we could show the following, then we would have a complete proof:</p>
-<div class="displaymath">
-\begin{align*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
-\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
-\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\\
-\amp = \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right).
-\end{align*}
-</div>
-<p id="p-96">So far, we have shown the first, second, and fourth (in)equalities to be true. The last obstacle to overcome in order to finish this induction proof is to show that</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-97">This is, of course, equivalent to showing that</p>
-<div class="displaymath">
-\begin{equation*}
-2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-98">Let's see what these would look like written out<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-5" id="fn-5"><sup> 2 </sup></a>:</p>
-<div class="displaymath">
-\begin{equation*}
-2(a_1 a_{k+1} b_1 b_{k+1} + a_2 a_{k+1} b_2 b_{k+1} + ... + a_{k} a_{k+1} b_{k} b_{k+1} + a_{k+1} a_{k+1} b_{k+1} b_{k+1}) \leq (a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2) + (a_2^2 b_{k+1}^2 + a_{k+1}^2 b_2^2) + ... + (a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k}^2) + (a_{k+1}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2)\text{.}
-\end{equation*}
-</div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-5"><div class="fn">Writing the sums out isn't necessary, but I think it helps one get a sense of the algebra. Also, sorry about this line being ridiculously long.</div></div>
-<p id="p-99">At this point, my line of reasoning resembled something like this: "<em class="emphasis">The left and right-hand sides are both sums of k+1 terms. If I could show that each term on the left is less than or equal to its respective term on the right, then I'd be done</em>".</p>
-<p id="p-100">That is, by the way, exactly what we're going to show. Do the quantities \(a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2\) and \(2(a_1 a_{k+1} b_1 b_{k+1})\) remind you of anything?</p>
-<p id="p-101">What if they were re-written as \((a_1 b_{k+1})^2 + (a_{k+1} b_1)^2\) and \(2(a_1 b_{k+1} \cdot a_{k+1} b_1)\text{?}\) I won't keep you in suspense anymore — we're going to make use of the fact that \(p^2 + q^2 \geq 2pq\) for all \(p, q \in \mathbb{R}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 3 </sup></a>.</p>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn"><div class="displaymath">
-\begin{align*}
-(p - q)^2 \amp \geq 0\\
-\implies p^2 + q^2 - 2pq \amp \geq 0\\
-\implies p^2 + q^2 \amp \geq 2pq.
-\end{align*}
-</div></div></div>
-<p id="p-102">It follows immediately from said fact that</p>
-<div class="displaymath">
-\begin{equation*}
-2(a_i a_{k+1} b_i b_{k+1}) \leq (a_i^2 b_{k+1}^2 + a_{k+1}^2 b_i^2)
-\end{equation*}
-</div>
-<p class="continuation">for all \(i \in \{1, 2, 3, ..., k, k + 1\}\text{.}\) Then we have shown on a term-by-term basis that</p>
-<div class="displaymath">
-\begin{equation*}
-2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-103">At last, we have shown that</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
-\end{equation*}
-</div>
-<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{,}\) by the Principle of Mathematical Induction. This therefore proves our truncated version of the Cauchy-Schwarz Inequality. \(\blacksquare\)</p></section></section></div></main>
+<p class="continuation">in which case \(a = b\text{.}\)</p>
+<p id="p-123">Next, suppose \(C = (x_c, y_c, z_c)\) is an arbitrary element of \(\mathbb{R}^3\text{.}\) Observe that the element \(c = (x_c + iy_c, \: z_c)\) in \(\mathbb{C} \times \mathbb{R}\) satisfies \(f(c) = C\text{.}\)</p>
+<p id="p-124">Since \(f\) is both injective and surjective, it follows that \(f\) is bijective and hence \(|\mathbb{C} \times \mathbb{R}| = |\mathbb{R}^3| = |\mathbb{R}|\text{.}\) If you are unfamiliar with infinite sets, such a result probably seems bizarre, but this is just how infinite sets are.</p>
+<p id="p-125">Does the set \(\mathbb{C} \times \mathbb{R}\) have any practical applications? Maybe. But for now, I think I'll stick to the usual \(\mathbb{C}\) and \(\mathbb{R}\) we all know and love (?).</p></section></section></div></main>
 </div>
 </body>
 </html>

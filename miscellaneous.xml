@@ -20,6 +20,8 @@
     <title>Calculus in Incremental Game Mechanics</title>
 
     <introduction>
+      <p><em>December 12th, 2021</em></p>
+
       <p><em>Incremental games</em>, perhaps better known under the misnomer <em>idle games</em>, are video games whose gameplay centers on the acquisition of in-game currency.</p>
 
       <p>Roughly speaking, the player spends in-game currencies to increase the rate at which they generate said currencies, which the player then uses to further increase the rate at which they generate said currencies.</p>
@@ -121,6 +123,8 @@
     <title>How to Make Any Graph Spin in Desmos</title>
 
     <introduction>
+      <p><em>January 9th, 2022</em></p>
+
       <p>Today, we're gonna mess around in Desmos. That's right, I'll show you how to make any Desmos graph rotate around any location on the plane you want! Fair warning, what's about to unfold is a bit ridiculous.</p>
 
       <p>The approach we'll take has three main steps, as follows:</p>
@@ -217,6 +221,177 @@
       <p>I've created an example Desmos project for you to fiddle around with. Click <url href="https://www.desmos.com/calculator/a5glisxpi6/">here</url>.</p>
 
       <p>There are, of course, other methods to rotate a curve in Desmos, and I hope you find this approach relatively simple. Now, go forth and make your graphs spin!</p>
+    </subsection>
+  </section>
+
+  <!---->
+  <!---->
+  <!---->
+  <!-- C x R: A Short Thought Experiment -->
+  <!---->
+  <!---->
+  <!---->
+
+  <section xml-id="miscellaneous-ctimesr">
+    <title><m>\mathbb{C} \times \mathbb{R}</m>: A Short Thought Experiment</title>
+
+    <introduction>
+      <p><em>January 20th, 2022</em></p>
+
+      <p>Do you like <m>\mathbb{C}</m>? And do you like <m>\mathbb{R}</m>? If your answer to both those questions is 'yes', then <em>obviously</em>, the logical thing to consider afterwards is the holy matrimony of <m>\mathbb{C}</m> and <m>\mathbb{R}</m>.</p>
+
+      <p>Now presenting to you... <m>\mathbb{C} \times \mathbb{R}</m>. Let's get to know our new married couple. </p>
+
+      <p>A sensible first question to ask is "what exactly is the set <m>\mathbb{C} \times \mathbb{R}</m> comprised of"? Well, following the definition of the Cartesian product, we see that<me>\mathbb{C} \times \mathbb{R} = \{ (a, b) \: | \: a \in \mathbb{C} \land b \in \mathbb{R} \}</me>. An example of an element in <m>\mathbb{C} \times \mathbb{R}</m> is <m>(1 + 5i, \: 4)</m>. I'm sure you'll agree with me that <m>1 + 5i \in \mathbb{C}</m> and <m>4 \in \mathbb{R}</m>. So then, the contents of this blog post are dedicated to considering some interesting properties of this unusual set.</p>
+
+      <p>A basic understanding of the following concepts on the part of the reader would go a long way: <em>complex numbers, set theory, fields, cardinalities of infinite sets, bijective maps, proofs of injectivity and surjectivity</em>.</p>
+    </introduction>
+
+    <subsection xml-id="miscellaneous-ctimesr-field">
+      <title>An Attempt to Define <m>\mathbb{C} \times \mathbb{R}</m> as a Field</title>
+
+      <p>In mathematics, we define a field to be a set <m>S</m> on which the binary operations of addition and multiplication are defined, with the additional requirement that the following list of properties hold:</p>
+
+      <ol>
+        <li><p><m>a + b \in S</m> and <m>a \cdot b \in S</m>.</p></li>
+        <li><p><m>a + (b + c) = (a + b) + c</m> and <m>a \cdot (b \cdot c) = (a \cdot b) \cdot c</m>.</p></li>
+        <li><p><m>a + b = b + a</m> and <m>a \cdot b = b \cdot a</m>.</p></li>
+        <li><p><m>a \cdot (b + c) = (a \cdot b) + (a \cdot c)</m>.</p></li>
+        <li><p><m>\exists e_{add} \in S \: | \: a + e_{add} = a</m>.</p></li>
+        <li><p><m>\exists e_{mul} \in S \: | \: a \cdot e_{mul} = a</m>.</p></li>
+        <li><p><m>\forall a \in S, \exists -a \in S \: | \: a + (-a) = e_{add}</m>.</p></li>
+        <li><p><m>\forall a \neq 0 \in S, \exists a^{-1} \in S \: | \: a \cdot a^{-1} = e_{mul}</m>,</p></li>
+      </ol>
+
+      <p>where <m>a</m>, <m>b</m>, and <m>c</m> are any elements of <m>S</m>. In this context, <m>e_{add}</m> is known as the additive identity and <m>e_{mul}</m> is known as the multiplicative identity.</p>
+
+      <p>We now wish to define addition and multiplication on our set <m>\mathbb{C} \times \mathbb{R}</m> in a way that satisfies all the properties of a field. There are a lot of potential starting options, but I would like to propose what I think is the most natural approach.</p>
+
+      <p>Before that, though, here's some more notation. Let<me>a = (x_a + iy_a, \: z_a) \qquad b = (x_b + iy_b, \: z_b) \qquad c = (x_c + iy_c, \: z_c)</me>be three arbitrary elements of <m>\mathbb{C} \times \mathbb{R}</m>, with <m>x_{abc}, \: y_{abc}, \: z_{abc} \in \mathbb{R}</m><fn>Please note that, in this context, <m>z</m> refers strictly to <em>real</em> numbers!</fn>. We now define addition and multiplication in the following manner:
+        <md>
+          <mrow>a + b = (x_a + iy_a, \: z_a) + (x_b + iy_b, \: z_b) = (x_a + x_b + i(y_a + y_b), \: z_a + z_b)</mrow>
+          <mrow>a \cdot b = (x_a + iy_a, \: z_a) \cdot (x_b + iy_b, \: z_b) = (x_a x_b - y_a y_b + i(x_a y_b + x_b y_a), \: z_a z_b).</mrow>
+        </md>
+      </p>
+
+      <p>I think this is a fairly pragmatic way of going about the matter, as we are simply adding and multiplying the complex and real components of <m>a</m> and <m>b</m> separately.</p>
+
+      <p>The rest of this subsection is used to prove that this particular definition of addition and multiplication satisfy the aforementioned properties of a field.</p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>1. <m>a + b \in S</m> and <m>a \cdot b \in S</m>. <em>The set</em> <m>S</m> <em>is closed under addition and multiplication</em>. Per our definition of addition, <m>a + b = (x_a + x_b + i(y_a + y_b), \: z_a + z_b)</m>. Since <m>x_a + x_b + i(y_a + y_b) \in \mathbb{C}</m> and <m>z_a + z_b \in \mathbb{R}</m>, it follows that <m>a + b \in S</m>. A similar argument shows that <m>a \cdot b \in S</m>.</p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>2. <m>a + (b + c) = (a + b) + c</m> and <m>a \cdot (b \cdot c) = (a \cdot b) \cdot c</m>. <em>Addition and multiplication are associative</em>. Observe that
+        <md>
+          <mrow>a + (b + c) \amp = (x_a + iy_a, \: z_a) + (x_b + x_c + i(y_b + y_c), \: z_b + z_c)</mrow>
+          <mrow>\amp = (x_a + x_b + x_c + i(y_a + y_b + y_c), \: z_a + z_b + z_c)</mrow>
+          <mrow>\amp = (x_a + x_b + i(y_a + y_b), \: z_a + z_b) + (x_c + iy_c, \: z_c)</mrow>
+          <mrow>\amp = (a + b) + c.</mrow>
+        </md>
+      and
+        <md>
+          <mrow>a \cdot (b \cdot c) \amp = (x_a + iy_a, \: z_a) \cdot (x_b x_c - y_b y_c + i(x_b y_c + x_c y_b), \: z_b z_c)</mrow>
+          <mrow>\amp = (x_a x_b x_c - x_a y_b y_c - y_a x_b y_c - y_a y_b x_c + i(x_a x_b y_c + x_a y_b x_c + y_a x_b x_c - y_a y_b y_c), \: z_a z_b z_c)</mrow>
+          <mrow>\amp = (x_a x_b - y_a y_b + i(x_a y_b + x_b y_a), \: z_a z_b) \cdot (x_c + iy_c, \: z_c)</mrow>
+          <mrow>\amp = (a \cdot b) \cdot c.</mrow>
+        </md>
+      Therefore addition and multiplication are associative<fn>On an unrelated side note, I think I'm going to go blind.</fn>.
+      </p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>3. <m>a + b = b + a</m> and <m>a \cdot b = b \cdot a</m>. <em>Addition and multiplication are commutative</em>. Observe that
+        <md>
+          <mrow>a + b \amp = (x_a + iy_a, \: z_a) + (x_b + iy_b, \: z_b)</mrow>
+          <mrow>\amp = (x_a + x_b + i(y_a + y_b), \: z_a + z_b)</mrow>
+          <mrow>\amp = (x_b + x_a + i(y_b + y_a), \: z_b + z_a)</mrow>
+          <mrow>\amp = (x_b + iy_b, \: z_b) + (x_a + iy_a, \: z_a)</mrow>
+          <mrow>\amp = b + a.</mrow>
+        </md>
+      and
+        <md>
+          <mrow>a \cdot b \amp = (x_a + iy_a, \: z_a) \cdot (x_b + iy_b, \: z_b)</mrow>
+          <mrow>\amp = (x_a x_b - y_a y_b + i(x_a y_b + x_b y_a), \: z_a z_b)</mrow>
+          <mrow>\amp = (x_b x_a - y_b y_a + i(x_b y_a + x_a y_b), \: z_b z_a)</mrow>
+          <mrow>\amp = (x_b + iy_b, \: z_b) \cdot (x_a + iy_a, \: z_a)</mrow>
+          <mrow>\amp = b \cdot a.</mrow>
+        </md>
+      Therefore addition and multiplication are commutative.
+      </p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>4. <m>a \cdot (b + c) = (a \cdot b) + (a \cdot c)</m>. <em>Multiplication is distributive over addition.</em> We have
+        <md>
+          <mrow>a \cdot (b + c) \amp = (x_a + iy_a, \: z_a) \cdot (x_b + x_c + i(y_b + y_c), \: z_b + z_c)</mrow>
+          <mrow>\amp = (x_a x_b + x_a x_c - y_a y_b - y_a y_c + ix_a y_b + ix_a y_c + iy_a x_b + iy_a x_c, \: z_a z_b + z_a z_c)</mrow>
+          <mrow>\amp = ((x_a x_b - y_a y_b + i(x_a y_b + y_a x_b)) + (x_a x_c - y_a y_c + i(x_a y_c + y_a x_c)), \: z_a z_b + z_a z_c)</mrow>
+          <mrow>\amp = (a \cdot b) + (a \cdot c).</mrow>
+        </md>
+      </p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>5. <m>\exists e_{add} \in S \: | \: a + e_{add} = a</m>. <em>There exists an additive identity</em> <m>e_{add}</m> <em>such that for every element</em> <m>a</m> <em>in</em> <m>S</m> <em>,</em> <m>a + e_{add} = a</m>. Let <m>e_{add} = (0 + 0i, \: 0)</m>. Then<me>a + e_{add} = (x_a + iy_a, \: z_a) + (0 + 0i, \: 0) = (x_a + 0 + i(y_a + 0), \: z_a + 0) = (x_a + iy_a, \: z_a) = a.</me>
+      </p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>6. <m>\exists e_{mul} \in S \: | \: a \cdot e_{mul} = a</m>. <em>There exists a multiplicative identity</em> <m>e_{mul}</m> <em>such that for every element</em> <m>a</m> <em>in</em> <m>S</m> <em>,</em> <m>a \cdot e_{mul} = a</m>. Let <m>e_{mul} = (1 + 0i, \: 1)</m>. Then<me>a \cdot e_{mul} = (x_a + iy_a, \: z_a) \cdot (1 + 0i, \: 1) = (x_a + iy_a, \: z_a) = a.</me>
+      </p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>7. <m>\forall a \in S, \exists -a \in S \: | \: a + (-a) = e_{add}</m>. <em>Every element</em> <m>a</m> <em>in</em> <m>S</m> <em>has an additive inverse</em> <m>-a</m> <em>such that</em> <m>a + (-a) = e_{add}</m>. Let <m>-a = (-x_a - iy_a, \: -z_a)</m>. Then
+        <md>
+          <mrow>a + (-a) \amp = (x_a + iy_a, \: z_a) + (-x_a - iy_a, \: -z_a)</mrow>
+          <mrow>\amp = (x_a - x_a + i(y_a - y_a), \: z_a - z_a) </mrow>
+          <mrow>\amp = (0 + 0i, \: 0)</mrow>
+          <mrow>\amp = e_{add}.</mrow>
+        </md>
+      </p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>8. <m>\forall a \neq 0 \in S, \exists a^{-1} \in S \: | \: a \cdot a^{-1} = e_{mul}</m>. <em>Every non-zero element</em> <m>a</m> <em>in</em> <m>S</m> <em>has a multiplicative inverse</em> <m>a^{-1}</m> <em>such that</em> <m>a \cdot a^{-1} = e_{mul}</m>. Let <m>d = a^{-1} = (x_d + iy_d, \: z_d)</m>. We now solve for <m>x_d</m>, <m>y_d</m>, and <m>z_d</m> in terms of <m>x_a</m>, <m>y_a</m>, and <m>z_a</m>. Observe that
+        <md>
+          <mrow>a \cdot d \amp = (x_a + iy_a, \: z_a) \cdot (x_d + iy_d, \: z_d) = (1 + 0i, \: 1)</mrow>
+          <mrow>\implies (1 + 0i, \: 1) \amp = (x_a + iy_a, \: z_a) \cdot (x_d + iy_d, \: z_d)</mrow>
+          <mrow>\implies (1 + 0i, \: 1) \amp = (x_a x_d - y_a y_d + i(x_a y_d + x_d y_a), \: z_a z_d)</mrow>
+        </md>
+      We then are presented with the following three equations:<me>x_a x_d - y_a y_d = 1, \qquad x_a y_d + x_d y_a = 0, \qquad z_a z_d = 1</me>. The first two equations form a nice system of equations. After some algebra, we see that <me>x_d = \frac{x_a}{x_a^2 + y_a^2}, \qquad y_d = \frac{-y_a}{x_a^2 + y_a^2}, \qquad z_d = \frac{1}{z_a}.</me> Hence, we see that <me>a^{-1} = \left(\frac{x_a}{x_a^2 + y_a^2} - i\frac{y_a}{x_a^2 + y_a^2}, \: \frac{1}{z_a}\right).</me>Unfortunately, this is where tragedy strikes. You may have noticed that all elements of the form <m>(x_a + iy_a, \: 0)</m> lack a multiplicative inverse, as <m>\frac{1}{0}</m> is not defined.
+      </p>
+
+      <p>----------------------------------------------------------------------------------------------------------------------</p>
+
+      <p>So, this definition of addition and multiplication was very close to satisfying all the properties of a field, but could not fulfill this last requirement. If it's any consolation, we have at least shown that <m>\mathbb{C} \times \mathbb{R}</m> is a commutative ring under these addition and multiplication operations.</p>
+
+      <p>There may exist a definition of addition and multiplication which makes the set <m>\mathbb{C} \times \mathbb{R}</m> into a field, but I am not sure. This is somewhat similar to how <m>\mathbb{R}^3</m> is not a field when multiplication is defined component-wise. Indeed, there seem to be many analogues between the set <m>\mathbb{C} \times \mathbb{R}</m> and <m>\mathbb{R}^3</m>.</p>
+
+      <p>Speaking of which...</p>
+    </subsection>
+
+    <subsection xml-id="miscellaneous-ctimesr-cardinality">
+      <title>The Cardinality of <m>\mathbb{C} \times \mathbb{R}</m></title>
+
+      <p>There are obviously an uncountably infinite amount of elements in <m>\mathbb{C} \times \mathbb{R}</m>, but we can still get a feel for the cardinality of this set, <m>|\mathbb{C} \times \mathbb{R}|</m>. In particular, I claim that <m>|\mathbb{C} \times \mathbb{R}| = |\mathbb{R}|</m>.</p>
+
+      <p>There is more than one way to show that this is true, and we will explore one such method involving bijective maps. By definition, two sets have the same cardinality if there exists a bijection from one set to the other.</p>
+
+      <p>Therefore, finding a bijection from <m>\mathbb{C} \times \mathbb{R}</m> to <m>\mathbb{R}</m> will prove that these two sets share the same cardinality. However, such a task is a little difficult. Instead, we are going to be a little cheeky and make use of a proven fact that <m>|\mathbb{R}^3| = |\mathbb{R}|</m><fn>Refer to <url href="https://math.stackexchange.com/questions/243590/bijection-from-mathbb-r-to-mathbb-rn">this</url> post for an explanation of this result</fn>.</p>
+
+      <p>So instead, we will find a bijective map <m>f</m>, where <m>f: \mathbb{C} \times \mathbb{R} \rightarrow \mathbb{R}^3</m>. The most sensible thing to first try is, in my opinion, the map <m>(x + iy, \: z) \mapsto (x, \: y, \: z)</m>. We now show that <m>f</m> is injective and surjective.</p>
+
+      <p>Let <m>a = (x_a + iy_a, \: z_a)</m> and <m>b = (x_b + iy_b, \: z_b)</m> represent two arbitrary elements in <m>\mathbb{C} \times \mathbb{R}</m>, and suppose <m>f(a) = f(b)</m>. It then follows that <m>(x_a, y_a, z_a) = (x_b, y_b, z_b)</m> and so we have<me>x_a = x_b \qquad y_a = y_b \qquad z_a = z_b</me>, in which case <m>a = b</m>.</p>
+
+      <p>Next, suppose <m>C = (x_c, y_c, z_c)</m> is an arbitrary element of <m>\mathbb{R}^3</m>. Observe that the element <m>c = (x_c + iy_c, \: z_c)</m> in <m>\mathbb{C} \times \mathbb{R}</m> satisfies <m>f(c) = C</m>.</p>
+
+      <p>Since <m>f</m> is both injective and surjective, it follows that <m>f</m> is bijective and hence <m>|\mathbb{C} \times \mathbb{R}| = |\mathbb{R}^3| = |\mathbb{R}|</m>. If you are unfamiliar with infinite sets, such a result probably seems bizarre, but this is just how infinite sets are.</p>
+
+      <p>Does the set <m>\mathbb{C} \times \mathbb{R}</m> have any practical applications? Maybe. But for now, I think I'll stick to the usual <m>\mathbb{C}</m> and <m>\mathbb{R}</m> we all know and love (?).</p>
     </subsection>
   </section>
 

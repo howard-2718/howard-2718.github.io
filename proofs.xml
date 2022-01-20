@@ -20,6 +20,8 @@
     <title>Mathematical Induction and the Cauchy-Schwarz Inequality</title>
 
     <introduction>
+      <p><em>January 8th, 2022</em></p>
+
       <p>The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
 
       <p>In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: mathematical induction. This proof is one which I formulated independently — I was inspired to do so after seeing a related problem posted on a Discord server I visit.</p>

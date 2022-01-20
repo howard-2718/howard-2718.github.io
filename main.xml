@@ -1,4 +1,4 @@
-<!-- RUN THIS IN THE PROJECT FOLDER: xsltproc -xinclude ~/Documents/PreTeXt/mathbook/xsl/pretext-html.xsl ~/Documents/PreTeXt/r_parab/main.xml -->
+<!-- RUN THIS IN THE PROJECT FOLDER: xsltproc -xinclude ~/Documents/PreTeXt/mathbook/xsl/pretext-html.xsl ~/Documents/PreTeXt/romance/main.xml -->
 
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
 
