@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-26T18:36:38-08:00       *-->
+<!--*       on 2022-04-14T03:06:29-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,12 +15,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Therefore,</p>
+<p>The technique for integrating this above integral is taught in most integral calculus courses, and is as follows:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\text{.}
-\end{equation*}
+\begin{align*}
+\int \cos^3(2x) \: dx \amp = \int \cos(2x) \cdot \cos^2(2x) \: dx\\
+\amp = \int \cos(2x)(1 - \sin^2(2x)) \: dx\\
+\amp = \int \cos(2x) \: dx - \int \sin^2(2x)\cos(2x) \: dx\\
+\amp = \frac{1}{2} \sin(2x) - \frac{1}{6} \sin^3(2x) + C.
+\end{align*}
 </div>
-<span class="incontext"><a href="section-5.html#p-142">in-context</a></span>
+<span class="incontext"><a href="section-4.html#p-142">in-context</a></span>
 </body>
 </html>

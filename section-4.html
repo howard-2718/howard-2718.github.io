@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-26T18:36:38-08:00       *-->
+<!--*       on 2022-04-14T03:06:28-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,7 +11,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Mathematical Vignettes</title>
+<title>Compare and Contrast: Three Methods for Integrating \(\sin^6(x)\)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>window.MathJax = {
@@ -83,7 +83,7 @@
 <li><a href="section-1.html" data-scroll="section-1">Calculus in Incremental Game Mechanics</a></li>
 <li><a href="section-2.html" data-scroll="section-2">How to Make Any Graph Spin in Desmos</a></li>
 <li><a href="section-3.html" data-scroll="section-3">\(\mathbb{C} \times \mathbb{R}\text{:}\) A Short Thought Experiment</a></li>
-<li><a href="section-4.html" data-scroll="section-4" class="active">Mathematical Vignettes</a></li>
+<li><a href="section-4.html" data-scroll="section-4" class="active">Compare and Contrast: Three Methods for Integrating \(\sin^6(x)\)</a></li>
 </ul>
 </li>
 <li class="link">
@@ -92,11 +92,228 @@
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-4"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Mathematical Vignettes</span>
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Compare and Contrast: Three Methods for Integrating \(\sin^6(x)\)</span>
 </h2>
-<section class="introduction" id="introduction-5"><p id="p-126"><em class="emphasis">January 26th, 2022</em></p>
-<p id="p-127">Would you perhaps be interested in checking out some of my artistic works? No? Well, <a class="external" href="https://drive.google.com/file/d/11Zk3hOofqX87WetklWwWp5nd4fvmXDxh/view?usp=sharing" target="_blank">here</a>'s the link, anyways. There's only a poem right now, but more might be on the way...</p>
-<p id="p-128">That's, uh, basically all there is for this post. My bad?</p></section></section></div></main>
+<section class="introduction" id="introduction-5"><p id="p-126"><em class="emphasis">April 14, 2022</em></p>
+<p id="p-127">It's been a long time since I've posted, hasn't it? School's been keeping me occupied, and I've also been in a little bit of a creative rut when it comes to ideas for new blog posts. But not for now!</p>
+<p id="p-128">As the title implies, we will be looking at three techniques for finding the general antiderivative of the function \(f(x) = \sin^6(x)\text{,}\) which is definitely not the easiest function to integrate. The three methods which we will explore are:</p>
+<ol class="decimal">
+<li id="li-20"><p id="p-129">Integration by standard trigonometric identities,</p></li>
+<li id="li-21"><p id="p-130">Integration by trigonometric reduction formulae, and</p></li>
+<li id="li-22"><p id="p-131">Integration by complex definitions of \(\sin\) and \(\cos\text{.}\)</p></li>
+</ol>
+<p id="p-132">Mathematical shenanigans are to follow. I was inspired to write up this post after I spoke with a friend about how to integrate the somewhat friendlier function \(\sin^4(x)\text{.}\)</p>
+<p id="p-133">Ultimately, I decided to tackle a slightly higher power of \(\sin\) in this article to better get my points across.</p>
+<p id="p-134">I think that's enough preamble for now. Time for some integration! Just in time for my Calc 2 final, as well :)</p></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Evaluating \(\int \sin^6(x) \: dx\) by Standard Trigonometric Identities</span>
+</h3>
+<p id="p-135">In this first technique, our approach will be to repeatedly use variants of the well-known trig identity</p>
+<div class="displaymath">
+\begin{equation*}
+\cos(2x) = 1 - \sin^2(x)
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\cos^2(x) = \frac{1}{2} + \frac{\cos(2x)}{2}
+\end{equation*}
+</div>
+<p class="continuation">to get rid of those pesky exponents.</p>
+<p id="p-136">First, let us quickly rearrange the first identity to isolate \(\sin^2(x)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\cos(2x) = 1 - \sin^2(x) \implies \sin^2(x) = \frac{1}{2} - \frac{\cos(2x)}{2}.
+\end{equation*}
+</div>
+<p id="p-137">The following mathematical work will be a bit sparse on commentary, but hopefully the steps taken are easy enough to follow. The idea is to, for lack of a better word, spam these two identities to gradually wear down the exponents.</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^6(x) \: dx \amp = \int (\sin^2(x))^3 \: dx\\
+\amp = \int \left(\frac{1}{2} - \frac{\cos(2x)}{2}\right)^3 \: dx.
+\end{align*}
+</div>
+<p id="p-138">In what follows, I am going to make frequent use of the binomial theorem. If you aren't sure what that is, please search it up, or refer to <a class="external" href="https://en.wikipedia.org/wiki/Binomial_theorem" target="_blank">this</a> Wikipedia page.</p>
+<p id="p-139">The primary goal of this article is to discuss integration techniques, and the contents are structured as such.</p>
+<p id="p-140">Using this theorem, we obtain:</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^6(x) \: dx \amp = \int \left(\frac{1}{2} - \frac{\cos(2x)}{2}\right)^3 \: dx\\
+\amp = \int \frac{1}{2^3} - 3 \cdot \frac{1}{2^2} \frac{\cos(2x)}{2} + 3 \cdot \frac{1}{2} \frac{\cos^2(2x)}{2^2} - \frac{\cos^3(2x)}{2^3} \: dx\\
+\amp = \frac{1}{8} \int 1 \: dx - \frac{3}{8} \int \cos(2x) \: dx + \frac{3}{8} \int \cos^2(2x) \: dx - \frac{1}{8} \int \cos^3(2x) \: dx
+\end{align*}
+</div>
+<p id="p-141">We have now broken up our starting integral into four, more manageable integrals. For the sake of brevity, we will work through integrating just the rightmost integral,</p>
+<div class="displaymath">
+\begin{equation*}
+\int \cos^3(2x) \: dx.
+\end{equation*}
+</div>
+<p class="continuation">The other integrals are left as an exercise for the reader (a classic).</p>
+<p id="p-142">The technique for integrating this above integral is taught in most integral calculus courses, and is as follows:</p>
+<div class="displaymath">
+\begin{align*}
+\int \cos^3(2x) \: dx \amp = \int \cos(2x) \cdot \cos^2(2x) \: dx\\
+\amp = \int \cos(2x)(1 - \sin^2(2x)) \: dx\\
+\amp = \int \cos(2x) \: dx - \int \sin^2(2x)\cos(2x) \: dx\\
+\amp = \frac{1}{2} \sin(2x) - \frac{1}{6} \sin^3(2x) + C.
+\end{align*}
+</div>
+<p id="p-143">Returning back to the original integral, we'll piece together the smaller integrals to get the final result.</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^6(x) \: dx \amp = \frac{1}{8} \int 1 \: dx - \frac{3}{8} \int \cos(2x) \: dx + \frac{3}{8} \int \cos^2(2x) \: dx - \frac{1}{8} \int \cos^3(2x) \: dx\\
+\amp = \frac{1}{8}x - \frac{3}{16} \sin(2x) + \frac{3}{16}x + \frac{3}{64} \sin(4x) - \frac{1}{16} \sin(2x) + \frac{1}{48} \sin^3(2x) + C\\
+\amp = \frac{5}{16}x - \frac{1}{4} \sin(2x) + \frac{3}{64} \sin(4x) + \frac{1}{48} \sin^3(2x) + C
+\end{align*}
+</div>
+<p id="p-144">Let us put the final answer on a new line, for posterity's sake:</p>
+<div class="displaymath">
+\begin{equation*}
+\int \sin^6(x) \: dx = \frac{5}{16}x - \frac{1}{4} \sin(2x) + \frac{3}{64} \sin(4x) + \frac{1}{48} \sin^3(2x) + C.
+\end{equation*}
+</div>
+<p class="continuation">Take note of this expression, as we will be comparing it with other, equivalent<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 1 </sup></a> expressions obtained by different methods.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-7"><div class="fn">Equivalent, up to a constant of integration.</div></div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Evaluating \(\int \sin^6(x) \: dx\) by Trigonometric Reduction Formulae</span>
+</h3>
+<p id="p-145">Trig reduction formulae are powerful tools that express integrals of powers of trigonometric functions in terms with lesser powers. The process can be repeated until the remaining integral is simple to evaluate.</p>
+<p id="p-146">It's like recursion. Sort of.</p>
+<p id="p-147">The trig reduction formula which we will be using is the standard formula for \(\sin^n(x)\text{,}\) and takes the following form for any \(n \in \mathbb{N}, n \geq 2\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int \sin^n(x) \: dx = -\frac{1}{n} \sin^{n-1}(x)\cos(x) + \frac{n-1}{n} \int \sin^{n-2}(x) \: dx. 
+\end{equation*}
+</div>
+<p class="continuation">I'll quickly go over the derivation of this formula, as it's not <em class="emphasis">too</em> complicated, and is also a practical example of integration by parts.</p>
+<p id="p-148">We choose \(u\) and \(dv\) as follows, then proceed.</p>
+<div class="displaymath">
+\begin{align*}
+u \amp = \sin^{n-1}(x)\\
+\implies du \amp = (n-1)\sin^{n-2}(x)\cos(x)\\
+\\
+dv \amp = \sin(x)\\
+\implies v \amp = -\cos(x)
+\end{align*}
+</div>
+<p id="p-149">Quite a bit of algebra follows, as well as the use of a trigonometric identity.</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^n(x) \: dx \amp = -\sin^{n-1}(x)\cos(x) + \int (n-1)\sin^{n-2}(x)\cos^2(x) \: dx\\
+\amp = -\sin^{n-1}(x)\cos(x) + \int (n-1)\sin^{n-2}(x) (1 - \sin^2(x)) \: dx\\
+\amp = -\sin^{n-1}(x)\cos(x) + \int (n-1)\sin^{n-2}(x) \: dx - \int (n-1)\sin^n(x) \: dx
+\end{align*}
+</div>
+<p id="p-150">Let's bring the constants out of the integrals, and move that rightmost term over to the left.</p>
+<div class="displaymath">
+\begin{align*}
+n \int \sin^n(x) \: dx \amp = -\sin^{n-1}(x)\cos(x) + (n-1) \int \sin^{n-2}(x) \: dx\\
+\implies \int \sin^n(x) \: dx \amp = -\frac{1}{n} \sin^{n-1}(x)\cos(x) + \frac{n-1}{n} \int \sin^{n-2}(x) \: dx.
+\end{align*}
+</div>
+<p id="p-151">One trig reduction formula, hot off the presses. Of course, our desire is now to shove in \(n = 6\) and see where the formula takes us:</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^6(x) \: dx \amp = -\frac{1}{6} \sin^{5}(x)\cos(x) + \frac{5}{6} \int \sin^{4}(x) \: dx\\
+\amp = -\frac{1}{6} \sin^{5}(x)\cos(x) + \frac{5}{6} \left(-\frac{1}{4} \sin^{3}(x)\cos(x) + \frac{3}{4} \int \sin^{2}(x) \: dx \right)\\
+\amp = -\frac{1}{6} \sin^{5}(x)\cos(x) + \frac{5}{6} \left(-\frac{1}{4} \sin^{3}(x)\cos(x) + \frac{3}{4} \left( -\frac{1}{2} \sin(x)\cos(x) + \frac{1}{2} \int 1 \: dx \right) \right)
+\end{align*}
+</div>
+<p id="p-152">After performing quite a bit of multiplication, we get the final answer</p>
+<div class="displaymath">
+\begin{equation*}
+\int \sin^6(x) \: dx = -\frac{1}{6} \sin^{5}(x)\cos(x) - \frac{1}{24} \sin^{3}(x)\cos(x) - \frac{5}{16} \sin(x)\cos(x) + \frac{5}{16}x + C.
+\end{equation*}
+</div></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Evaluating \(\int \sin^6(x) \: dx\) by Complex Definitions of \(\sin\) and \(\cos\)</span>
+</h3>
+<p id="p-153">The third and final integration technique covered in this blog post is integration using the complex definitions of \(\sin\) and \(\cos\text{.}\) From what I've noticed, this method is the least well-known of the three, which is a real shame, as it's quite powerful.</p>
+<p id="p-154">For example, this technique was not covered in my integral calculus class, though it is in an appendix at the back of the course textbook.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 2 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn">An appendix which most students probably did not bother to read.</div></div>
+<p id="p-155">My goal is to cover this method of integration with minimal discussion of complex numbers. It turns out that this integration strategy can be employed with <em class="emphasis">very</em> little knowledge of them.</p>
+<p id="p-156">In fact, in addition to what we've covered so far, you need only know three more facts:</p>
+<ol class="decimal">
+<li id="li-23"><p id="p-157">\(\displaystyle \sin(x) = \frac{e^{ix} - e^{-ix}}{2i}\)</p></li>
+<li id="li-24"><p id="p-158">\(\displaystyle \cos(x) = \frac{e^{ix} + e^{-ix}}{2}\)</p></li>
+<li id="li-25"><p id="p-159">\(i^2 = -1\text{.}\)</p></li>
+</ol>
+<p id="p-160">The first two formulae are the so-called complex definitions of \(\sin\) and \(\cos\text{.}\) If you are confused or interested in how they came to be, I highly encourage you to look them up online.</p>
+<p id="p-161">As for the symbol \(i\text{,}\) all that is important to know for now is that it has the curious property where its square equals \(-1\text{.}\)</p>
+<p id="p-162">The five-step plan of attack for evaluating integrals of the form \(\int \sin^n(x) \: dx\) using complex numbers is as follows:</p>
+<ol class="decimal">
+<li id="li-26"><p id="p-163">Replace \(\sin(x)\) with its complex definition.</p></li>
+<li id="li-27"><p id="p-164">Split the integrand into two terms.</p></li>
+<li id="li-28"><p id="p-165">Apply the binomial theorem.</p></li>
+<li id="li-29"><p id="p-166">Finesse the resulting expression to rewrite it in terms of \(\sin\) and/or \(\cos\text{.}\)</p></li>
+<li id="li-30"><p id="p-167">Integrate the new integrand term by term.</p></li>
+</ol>
+<p id="p-168">We demonstrate this strategy with the titular integral \(\int \sin^6(x) \: dx\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^6(x) \: dx \amp = \int \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^6 \: dx\\
+\amp = \int \frac{1}{(2i)^6} (e^{ix} - e^{-ix})^6 \: dx\\
+\amp = \int -\frac{1}{2^6} (e^{6ix} - 6e^{4ix} + 15e^{2ix} - 20 + 15e^{-2ix} - 6e^{-4ix} + e^{-6ix}) \: dx
+\end{align*}
+</div>
+<p id="p-169">By this point, we have finished executing step 3. The step which follows is the most counter-intuitive, in my opinion.</p>
+<p id="p-170">Essentially, the idea is to group terms of like exponents together, and carefully perturb the integrand to have the formulas for \(\sin\) and \(\cos\) reappear.<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 3 </sup></a></p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^6(x) \: dx \amp = \int -\frac{1}{64} (e^{6ix} - 6e^{4ix} + 15e^{2ix} - 20 + 15e^{-2ix} - 6e^{-4ix} + e^{-6ix}) \: dx\\
+\amp = \int -\frac{1}{64} \left((e^{6ix} + e^{-6ix}) - 6(e^{4ix} + e^{-4ix}) + 15(e^{2ix} + e^{-2ix}) - 20\right) \: dx
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn">The decision to leave the constant multiplier inside the integral is purely stylistic. Everything works out the same if you opt to bring it out of the integral.</div></div>
+<p id="p-171">Before we move on, convince yourself of two things. First, that equality still holds, after rearranging all those terms, and second, that \(\cos(nx) = \frac{e^{nix} + e^{-nix}}{2}\text{.}\)</p>
+<p id="p-172">Next, a little bit of wondrous math magic:</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin^6(x) \: dx \amp = \int -\frac{1}{64} \left((e^{6ix} + e^{-6ix}) - 6(e^{4ix} + e^{-4ix}) + 15(e^{2ix} + e^{-2ix}) - 20\right) \: dx\\
+\amp = -\frac{1}{32} \int \left(\frac{e^{6ix} + e^{-6ix}}{2} - 6\frac{e^{4ix} + e^{-4ix}}{2} + 15\frac{e^{2ix} + e^{-2ix}}{2} - 10\right) \: dx\\
+\amp = -\frac{1}{32} \int \cos(6x) - 6\cos(4x) + 15\cos(2x) - 10 \: dx
+\end{align*}
+</div>
+<p id="p-173">All that's left to do is to integrate term by term to obtain the final result of</p>
+<div class="displaymath">
+\begin{equation*}
+\int \sin^6(x) \: dx = -\frac{1}{192}\sin(6x) + \frac{3}{64}\sin(4x) - \frac{15}{64}\sin(2x) + \frac{5}{16}x + C.
+\end{equation*}
+</div>
+<p class="continuation">I personally think that this is quite an elegant way of going about things, but your mileage may vary.</p></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.4</span> <span class="title">"But what about larger \(n\text{?}\)"</span>
+</h3>
+<p id="p-174">We have seen three ways of evaluating the integral</p>
+<div class="displaymath">
+\begin{equation*}
+\int \sin^6(x) \: dx,
+\end{equation*}
+</div>
+<p class="continuation">each with their own advantages and drawbacks. Notably, the first and third methods have final answers that look quite similar to each other, but the trig reduction formula returns a final function that is quite distinct from the other two.</p>
+<p id="p-175">It's interesting to observe, for example, that the functions</p>
+<div class="displaymath">
+\begin{equation*}
+-\frac{1}{6} \sin^{5}(x)\cos(x) - \frac{1}{24} \sin^{3}(x)\cos(x) - \frac{5}{16} \sin(x)\cos(x) + \frac{5}{16}x
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+-\frac{1}{192}\sin(6x) + \frac{3}{64}\sin(4x) - \frac{15}{64}\sin(2x) + \frac{5}{16}x
+\end{equation*}
+</div>
+<p class="continuation">describe the same graph.</p>
+<p id="p-176">We now discuss the relative efficiency of these three integration techniques for larger \(n\) in the integral</p>
+<div class="displaymath">
+\begin{equation*}
+\int \sin^n(x) \: dx.
+\end{equation*}
+</div>
+<p class="continuation">When \(n\) is quite large, the trig reduction method seems to be the fastest, most efficient method. There are patterns in the values of the coefficients which could be exploited to strategically reduce the amount of required calculations.</p>
+<p id="p-177">Perhaps the most prominent downside to this technique is that the terms still contain powers of trigonometric functions, which might be undesirable.</p>
+<p id="p-178">The next best method is, in my opinion, integration via complex trig definitions. As \(n\) increases, the bulk of the extra work is in the calculation of the binomial expansion and regrouping of terms. I do think this method beats the first one, though.</p>
+<p id="p-179">Note that with the complex integration technique, we were able to express the integral in terms of trig functions without any squares, cubes, etc. If we needed to, say, integrate the integral of \(\sin^6(x)\text{,}\) it would be relatively quick and painless.</p>
+<p id="p-180">As a challenge for the reader, you could try to evaluate \(\int \sin^8(x) \: dx\text{?}\) Or maybe something even crazier, like \(\int \sin^{22}(x) \: dx\text{?}\)</p>
+<p id="p-181">Perhaps we've opened up too large a proverbial can of worms...</p></section></section></div></main>
 </div>
 </body>
 </html>

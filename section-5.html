@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-26T18:36:38-08:00       *-->
+<!--*       on 2022-04-14T03:06:28-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -83,7 +83,7 @@
 <li><a href="section-1.html" data-scroll="section-1">Calculus in Incremental Game Mechanics</a></li>
 <li><a href="section-2.html" data-scroll="section-2">How to Make Any Graph Spin in Desmos</a></li>
 <li><a href="section-3.html" data-scroll="section-3">\(\mathbb{C} \times \mathbb{R}\text{:}\) A Short Thought Experiment</a></li>
-<li><a href="section-4.html" data-scroll="section-4">Mathematical Vignettes</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Compare and Contrast: Three Methods for Integrating \(\sin^6(x)\)</a></li>
 </ul>
 </li>
 <li class="link">
@@ -94,24 +94,24 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-5"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Mathematical Induction and the Cauchy-Schwarz Inequality</span>
 </h2>
-<section class="introduction" id="introduction-7"><p id="p-130"><em class="emphasis">January 8th, 2022</em></p>
-<p id="p-131">The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
-<p id="p-132">In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: mathematical induction. This proof is one which I formulated independently — I was inspired to do so after seeing a related problem posted on a Discord server I visit.</p>
-<p id="p-133">Mathematical induction is a great tool to have your inventory, but is sort of a hassle to explain, so I won't do that here. Use the power of the internet! Some sources which I think do a good job covering the topic are <a class="external" href="https://brilliant.org/wiki/induction/" target="_blank">here</a> and <a class="external" href="https://www.mathsisfun.com/algebra/mathematical-induction.html" target="_blank">here</a>.</p></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-7"><p id="p-183"><em class="emphasis">January 8th, 2022</em></p>
+<p id="p-184">The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
+<p id="p-185">In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: mathematical induction. This proof is one which I formulated independently — I was inspired to do so after seeing a related problem posted on a Discord server I visit.</p>
+<p id="p-186">Mathematical induction is a great tool to have your inventory, but is sort of a hassle to explain, so I won't do that here. Use the power of the internet! Some sources which I think do a good job covering the topic are <a class="external" href="https://brilliant.org/wiki/induction/" target="_blank">here</a> and <a class="external" href="https://www.mathsisfun.com/algebra/mathematical-induction.html" target="_blank">here</a>.</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Laying the Proverbial Groundwork</span>
 </h3>
-<p id="p-134">The version of the Cauchy-Schwarz Inequality which follows this paragraph — and which we're going to prove — is a bit abridged, for the sake of simplicity. Don't worry, it's still perfectly valid. It's just missing an extra condition for equality.</p>
-<p id="p-135">As previously mentioned, the proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible. It also mainly relies on high-school level algebra.</p>
+<p id="p-187">The version of the Cauchy-Schwarz Inequality which follows this paragraph — and which we're going to prove — is a bit abridged, for the sake of simplicity. Don't worry, it's still perfectly valid. It's just missing an extra condition for equality.</p>
+<p id="p-188">As previously mentioned, the proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible. It also mainly relies on high-school level algebra.</p>
 <article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz Inequality (Truncated).</span>
 </h6>
-<p id="p-136">For all sequences of real numbers \(a_{i}\) and \(b_{i}\text{,}\) the following inequality holds:</p>
+<p id="p-189">For all sequences of real numbers \(a_{i}\) and \(b_{i}\text{,}\) the following inequality holds:</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{n} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{n} a_{i}^2 \right) \left( \sum_{i = 1}^{n} b_{i}^2 \right)\text{.}
 \end{equation*}
-</div></article><p id="p-137">From the statement of the theorem, it should become apparent why one might be motivated to use mathematical induction as the proof technique. In this context, \(n\) can only assume values in \(\mathbb{Z}^+\text{,}\) so it makes for a good opportunity to utilize induction.</p>
-<p id="p-138">So then, let's get started on that proof! First, we'll consider the base case of \(n = 1\text{,}\) which is quite trivial. We see that</p>
+</div></article><p id="p-190">From the statement of the theorem, it should become apparent why one might be motivated to use mathematical induction as the proof technique. In this context, \(n\) can only assume values in \(\mathbb{Z}^+\text{,}\) so it makes for a good opportunity to utilize induction.</p>
+<p id="p-191">So then, let's get started on that proof! First, we'll consider the base case of \(n = 1\text{,}\) which is quite trivial. We see that</p>
 <div class="displaymath">
 \begin{equation*}
 (a_{1} b_{1})^2 \leq a_{1}^2 b_{1}^2\text{,}
@@ -123,22 +123,22 @@
 \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
 \end{equation*}
 </div>
-<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{.}\)</p></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{.}\)</p></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">It's Always the Algebra...</span>
 </h3>
-<p id="p-139">We want to make use of our inductive step, which is our assumption that</p>
+<p id="p-192">We want to make use of our inductive step, which is our assumption that</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right)\text{.}
 \end{equation*}
 </div>
-<p id="p-140">This should motivate us to express \(\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2\) in terms of \(\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2\text{.}\) Let's write the left hand side out:</p>
+<p id="p-193">This should motivate us to express \(\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2\) in terms of \(\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2\text{.}\) Let's write the left hand side out:</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})\text{.}
 \end{equation*}
 </div>
-<p id="p-141">How does this quantity differ from the other one? Well, note that in addition to the multiplication of</p>
+<p id="p-194">How does this quantity differ from the other one? Well, note that in addition to the multiplication of</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})\text{,}
@@ -150,20 +150,20 @@
 2 \cdot (a_1 b_1 a_{k+1} b_{k+1} + a_2 b_2 a_{k+1} b_{k+1} + ... + a_{k} b_{k} a_{k+1} b_{k+1} + a_{k+1} b_{k+1} a_{k+1} b_{k+1})\text{.}
 \end{equation*}
 </div>
-<p id="p-142">Therefore,</p>
+<p id="p-195">Therefore,</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\text{.}
 \end{equation*}
 </div>
-<p id="p-143">Feel free to expand these summations to double-check. Now, the appearance of the middle term marks a good time to invoke the inductive step:</p>
+<p id="p-196">Feel free to expand these summations to double-check. Now, the appearance of the middle term marks a good time to invoke the inductive step:</p>
 <div class="displaymath">
 \begin{align*}
 \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
 \amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right).
 \end{align*}
 </div>
-<p id="p-144">This is a good time to compare the quantity</p>
+<p id="p-197">This is a good time to compare the quantity</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)
@@ -175,13 +175,13 @@
 \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)\text{.}
 \end{equation*}
 </div>
-<p id="p-145">Namely, if we can show that the top quantity is less or equal than the bottom quantity, then the proof is complete. Let's expand this latter quantity out:</p>
+<p id="p-198">Namely, if we can show that the top quantity is less or equal than the bottom quantity, then the proof is complete. Let's expand this latter quantity out:</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = (a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2)\text{.}
 \end{equation*}
 </div>
-<p id="p-146">In a manner similar to what occurred previously, we observe that<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 1 </sup></a></p>
+<p id="p-199">In a manner similar to what occurred previously, we observe that<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 1 </sup></a></p>
 <div class="displaymath">
 \begin{align*}
 (a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2) = \text{ } \amp (a_1^2 + a_2^2 + ... + a_{k}^2)(b_1^2 + b_2^2 + ... + b_{k}^2) \text{ } +\\
@@ -189,16 +189,16 @@
 \amp (a_{k+1}^2 b_1^2 + a_{k+1}^2 b_2^2 + ... + a_{k+1}^2 b_{k}^2 + a_{k+1}^2 b_{k+1}^2).
 \end{align*}
 </div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-7"><div class="fn">It's not real math unless it runs off the page!</div></div>
-<p id="p-147">In summation notation, we obtain</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn">It's not real math unless it runs off the page!</div></div>
+<p id="p-200">In summation notation, we obtain</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
 \end{equation*}
-</div></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+</div></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Approaching an Apex; Alternatively, an Apotheosis</span>
 </h3>
-<p id="p-148">At this point, we should begin to envision what the final result will look like. If we could show the following, then we would have a complete proof:</p>
+<p id="p-201">At this point, we should begin to envision what the final result will look like. If we could show the following, then we would have a complete proof:</p>
 <div class="displaymath">
 \begin{align*}
 \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
@@ -207,36 +207,36 @@
 \amp = \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right).
 \end{align*}
 </div>
-<p id="p-149">So far, we have shown the first, second, and fourth (in)equalities to be true. The last obstacle to overcome in order to finish this induction proof is to show that</p>
+<p id="p-202">So far, we have shown the first, second, and fourth (in)equalities to be true. The last obstacle to overcome in order to finish this induction proof is to show that</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
 \end{equation*}
 </div>
-<p id="p-150">This is, of course, equivalent to showing that</p>
+<p id="p-203">This is, of course, equivalent to showing that</p>
 <div class="displaymath">
 \begin{equation*}
 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
 \end{equation*}
 </div>
-<p id="p-151">Let's see what these would look like written out<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 2 </sup></a>:</p>
+<p id="p-204">Let's see what these would look like written out<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 2 </sup></a>:</p>
 <div class="displaymath">
 \begin{equation*}
 2(a_1 a_{k+1} b_1 b_{k+1} + a_2 a_{k+1} b_2 b_{k+1} + ... + a_{k} a_{k+1} b_{k} b_{k+1} + a_{k+1} a_{k+1} b_{k+1} b_{k+1}) \leq (a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2) + (a_2^2 b_{k+1}^2 + a_{k+1}^2 b_2^2) + ... + (a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k}^2) + (a_{k+1}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2)\text{.}
 \end{equation*}
 </div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn">Writing the sums out isn't necessary, but I think it helps one get a sense of the algebra. Also, sorry about this line being ridiculously long.</div></div>
-<p id="p-152">At this point, my line of reasoning resembled something like this: "<em class="emphasis">The left and right-hand sides are both sums of k+1 terms. If I could show that each term on the left is less than or equal to its respective term on the right, then I'd be done</em>".</p>
-<p id="p-153">That is, by the way, exactly what we're going to show. Do the quantities \(a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2\) and \(2(a_1 a_{k+1} b_1 b_{k+1})\) remind you of anything?</p>
-<p id="p-154">What if they were re-written as \((a_1 b_{k+1})^2 + (a_{k+1} b_1)^2\) and \(2(a_1 b_{k+1} \cdot a_{k+1} b_1)\text{?}\) I won't keep you in suspense anymore — we're going to make use of the fact that \(p^2 + q^2 \geq 2pq\) for all \(p, q \in \mathbb{R}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 3 </sup></a>.</p>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><div class="displaymath">
+<div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn">Writing the sums out isn't necessary, but I think it helps one get a sense of the algebra. Also, sorry about this line being ridiculously long.</div></div>
+<p id="p-205">At this point, my line of reasoning resembled something like this: "<em class="emphasis">The left and right-hand sides are both sums of k+1 terms. If I could show that each term on the left is less than or equal to its respective term on the right, then I'd be done</em>".</p>
+<p id="p-206">That is, by the way, exactly what we're going to show. Do the quantities \(a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2\) and \(2(a_1 a_{k+1} b_1 b_{k+1})\) remind you of anything?</p>
+<p id="p-207">What if they were re-written as \((a_1 b_{k+1})^2 + (a_{k+1} b_1)^2\) and \(2(a_1 b_{k+1} \cdot a_{k+1} b_1)\text{?}\) I won't keep you in suspense anymore — we're going to make use of the fact that \(p^2 + q^2 \geq 2pq\) for all \(p, q \in \mathbb{R}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 3 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><div class="displaymath">
 \begin{align*}
 (p - q)^2 \amp \geq 0\\
 \implies p^2 + q^2 - 2pq \amp \geq 0\\
 \implies p^2 + q^2 \amp \geq 2pq.
 \end{align*}
 </div></div></div>
-<p id="p-155">It follows immediately from said fact that</p>
+<p id="p-208">It follows immediately from said fact that</p>
 <div class="displaymath">
 \begin{equation*}
 2(a_i a_{k+1} b_i b_{k+1}) \leq (a_i^2 b_{k+1}^2 + a_{k+1}^2 b_i^2)
@@ -248,7 +248,7 @@
 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
 \end{equation*}
 </div>
-<p id="p-156">At last, we have shown that</p>
+<p id="p-209">At last, we have shown that</p>
 <div class="displaymath">
 \begin{equation*}
 \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
