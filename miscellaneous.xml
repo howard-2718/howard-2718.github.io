@@ -395,6 +395,14 @@
     </subsection>
   </section>
 
+  <!---->
+  <!---->
+  <!---->
+  <!-- Compare and Contrast: Three Methods for Integrating sin^6(x) -->
+  <!---->
+  <!---->
+  <!---->
+
   <section xml-id="miscellaneous-three_methods">
     <title>Compare and Contrast: Three Methods for Integrating <m>\sin^6(x)</m></title>
 
@@ -590,6 +598,138 @@
       <p>As a challenge for the reader, you could try to evaluate <m>\int \sin^8(x) \: dx</m>? Or maybe something even crazier, like <m>\int \sin^{22}(x) \: dx</m>?</p>
 
       <p>Perhaps we've opened up too large a proverbial can of worms...</p>
+    </subsection>
+  </section>
+
+  <!---->
+  <!---->
+  <!---->
+  <!-- Printing Julia Sets in a Command-line Interface -->
+  <!---->
+  <!---->
+  <!---->
+
+  <section xml-id="miscellaneous-juliacli">
+    <title>Printing Julia Sets to a Command-Line Interface</title>
+
+    <introduction>
+      <p><em>May 20th, 2022</em></p>
+
+      <p>Julia sets. Have you heard of those?</p>
+
+      <p>If you type 'Julia set' into Google and take a gander at the images, you'll be met with a series of intricate fractals, with spirals and loops every which way.</p>
+
+      <p>But what exactly are these weird patterns? How are they generated? And how can we generate them ourselves?</p>
+
+      <p>These questions form the core of what we'll be exploring in today's blog post. Join me, as we make a brief jaunt into the world of complex numbers!</p>
+    </introduction>
+
+    <subsection xml-id="miscellaneous-juliacli-intro">
+      <title>Keeping it Real</title>
+
+      <p>Julia sets live in the world of complex numbers, and frankly, bringing <m>i</m> into the mix can get confusing. So for now, we'll handle strictly <em>real</em> numbers.</p>
+
+      <p>Consider the function <m>f: \mathbb{R} \rightarrow \mathbb{R}</m> given by <me>f(x) = x^2 + c,</me>where <m>c \in \mathbb{R}</m>. In order to understand what's going on with Julia sets, we're going to examine what happens to the sequence<me>A_n = \{f(x_0), \: f(f(x_0)), \: f(f(f(x_0))), \: f(f(f(f(x_0)))), \: ...\}</me>for certain choices of <m>x_0</m> and <m>c</m>. We're essentially looking at what happens as we keep composing <m>f</m> with itself.</p>
+
+      <p>To get a more concrete idea of this sequence's behavior, we can evaluate some terms for a certain <m>x_0</m> and <m>c</m>, say <m>x_0 = 2</m> and <m>c = -1</m>.
+        <md>
+          <mrow>a_1 \amp = f(x_0) = x_0^2 + c = 2^2 - 1 = 3</mrow>
+          <mrow>a_2 \amp = f(a_1) = a_1^2 + c = 3^2 - 1 = 8</mrow>
+          <mrow>a_3 \amp = f(a_2) = a_2^2 + c = 8^2 - 1 = 63</mrow>
+          <mrow>a_4 \amp = f(a_3) = a_3^2 + c = 63^2 - 1 = 3968</mrow>
+          <mrow>...</mrow>
+        </md>
+        It appears that under these conditions, the sequence grows without bound, so we can say <m>A_n \rightarrow \infty</m> as <m>n \rightarrow \infty</m>. What if we keep <m>c = -1</m>, but try a different value of <m>x_0</m>, like <m>x_0 = 1</m>?
+        <md>
+          <mrow>a_1 \amp = f(x_0) = x_0^2 + c = 1^2 - 1 = 0</mrow>
+          <mrow>a_2 \amp = f(a_1) = a_1^2 + c = 0^2 - 1 = -1</mrow>
+          <mrow>a_3 \amp = f(a_2) = a_2^2 + c = (-1)^2 - 1 = 0</mrow>
+          <mrow>a_4 \amp = f(a_3) = a_3^2 + c = 0^2 - 1 = -1</mrow>
+          <mrow>...</mrow>
+        </md>
+        We seem to have entered a loop, where the terms of the sequence periodically alternate between <m>0</m> and <m>-1</m>. In this case, although <m>A_n</m> doesn't approach anything as <m>n \rightarrow \infty</m>, we can be sure that it doesn't blow up to infinity.
+      </p>
+
+      <p>This is, in fact, a dichotomy. For any choice of <m>x_0</m> and <m>c</m>, one and only one of the following can be true:</p>
+
+      <ol>
+        <li><p>As <m>n \rightarrow \infty</m>, the sequence <m>A_n</m> blows up to infinity, or</p></li>
+        <li><p>It doesn't.</p></li>
+      </ol>
+
+      <p>This raises an interesting question. Given a defined value of <m>c</m>, can we determine which values of <m>x_0</m> will cause the sequence <m>A_n</m> to tend to infinity?</p>
+
+      <p>It turns out that we can find a bound <m>R > 0</m> dependent on <m>c</m>, such that if <em>any</em> term of the sequence <m>A_n</m> satisfies <m>|a_n| > R</m>, then <m>A_n \rightarrow \infty</m> as <m>n \rightarrow \infty</m>.</p>
+
+      <p>To find a potential expression for <m>R</m>, let's consider one property which would be satisfied in the long term if the sequence <m>A_n</m> tended to infinity. The property in question is <me>|a_{n+1}| > |a_n|.</me>At sufficiently large <m>n</m>, this is equivalent to saying that successive terms of the sequence move further and further away from the origin, a behavior which this infinity-approaching sequence would exhibit.</p>
+
+      <p>If you, the reader, happen to be an expert in analysis, then I will readily admit that this logic is not quite watertight. For example, a bounded, monotonically increasing sequence would satisfy the inequality, but would <em>not</em> tend to infinity.</p>
+
+      <p>However, considering the way the sequence <m>A_n</m> is defined, we informally expect that such a scenario won't occur. In any case, please forgive my lack of rigor—I am but a measly university undergraduate!</p>
+
+      <p>Let's manipulate the inequality <m>|a_{n+1}| > |a_n|</m> a bit, using the definition of <m>f</m>. Suppose <m>a_n = x</m>. Then <m>a_{n+1} = f(x)</m>, and we perform the following operations.
+        <md>
+          <mrow>\amp |f(x)| > |x|</mrow>
+          <mrow>\implies \amp |x^2 + c| > |x|</mrow>
+          <mrow>\implies \amp |x^2| + |c| > |x|</mrow>
+          <mrow>\implies \amp |x|^2 - |x| + |c| > 0</mrow>
+        </md>
+        The third line makes use of the triangle inequality, <m>|a| + |b| \geq |a + b|</m>. We now have a quadratic in <m>|x|</m> on the left hand side, whose roots are<me>x = \pm \frac{1 + \sqrt{1 + 4|c|}}{2}.</me>
+      </p>
+
+      <p>This last expression is our desired value of <m>R</m>. To reiterate, if at any point in the sequence <m>A_n</m> we encounter a term <m>a_n</m> such that <m>|a_n| > R = \frac{1 + \sqrt{1 + 4|c|}}{2}</m>, then <m>A_n \rightarrow \infty</m> as <m>n \rightarrow \infty</m>.</p>
+
+      <p>What I've shown here is far from a complete proof, but it hopefully shows, from an informal perspective, how we might have been motivated to find a potential expression for <m>R</m>.</p>
+    </subsection>
+
+    <subsection xml-id="miscellaneous-juliacli-complex">
+      <title>It's All Complex Now</title>
+
+      <p>It's almost time to discuss Julia sets! We've been discussing <m>f(x) = x^2 + c</m> for so long that it's almost hard to remember what all this talk was in service of.</p>
+
+      <p>Before we do that, though, let's bring our function <m>f</m> into the complex world. We're dealing with a different—but similar—beast this time.</p>
+
+      <p>Now consider the function <m>f: \mathbb{C} \rightarrow \mathbb{C}</m> given by <me>f(z) = z^2 + c,</me>where <m>c \in \mathbb{C}</m>. The filled-in Julia set of <m>f</m>, written as <m>K(f)</m>, is defined as (set notation warning)<me>K(f) = \{z \in \mathbb{C} : |a_n| \text{ is bounded}\},</me>where <m>a_n</m> refers to the terms of <me>A_n = \{f(z), \: f(f(z)), \: f(f(f(z))), \: f(f(f(f(z)))), \: ...\},</me>similar as to before. Now that we're in complex land, though, remember that the absolute value notation refers instead to a complex number's modulus.</p>
+
+      <p>The Julia set itself, <m>J(f)</m> is the boundary of the filled-in Julia set. In notation, it looks like <m>J(f) = \partial K(f)</m>. Sidebar: the symbol <m>\partial</m> means 'boundary'. The boundary of a set in the complex plane has a rigorous meaning, but for our purposes, just think of it like the border, or the perimeter.</p>
+
+      <p>The rest of this article is devoted to writing a program that prompts the user for a value of <m>c</m> and prints the corresponding filled-in Julia set, <m>K(f)</m> to the terminal.</p>
+
+      <p>We'll examine an algorithm which can get the job done, after which I'll show my attempt, written in C.</p>
+
+      <p>The idea behind the code is to define <m>K(f)</m> by what it is <em>not</em>. For example, we mentioned that <m>K(f)</m> is the set of all complex numbers <m>z</m> such that <m>|A_n|</m> is bounded. It then follows that if, for a certain <m>z_0 \in \mathbb{C}</m>, <m>|A_n|</m> grows without bound, then evidently <m>z_0 \notin K(f)</m>.</p>
+
+      <p>It turns out that, much like our real-valued analog, if <em>any</em> term <m>a_n</m> in our sequence has the property<me>|a_n| > R = \frac{1 + \sqrt{1 + 4|c|}}{2}</me>, then the sequence <m>|A_n|</m> is not bounded. Remember that <m>A_n</m> depends on both the value <m>c</m> as well as where we start iterating from, which we'll call <m>z_0</m>.</p>
+    </subsection>
+
+    <subsection xml-id="miscellaneous-juliacli-coding">
+      <title>Putting our Programmer Hats On</title>
+
+      <p>Let's approach all this from a coding point of view. First, the look of the filled-in Julia set will depend heavily (if not entirely) on <m>c</m>, so we'll need some way of specifying that. We should let the user enter the complex number of their choice.</p>
+
+      <p>Then, we need to find the initial values <m>z_0</m> in the complex plane which don't belong to the filled-in Julia set. There's more than one way to do it, but we can create an <m>x</m> by <m>y</m> grid of characters, where <m>x</m> and <m>y</m> are to our liking. We'll require a way to map a square in the grid to a corresponding point in the complex plane.</p>
+
+      <p>The area in the complex plane which our grid covers need only include all points that are up to and including a distance <m>R</m> away from the origin. Anything outside that disc would automatically fail to have a bounded sequence, and would not be in the filled-in Julia set.</p>
+
+      <p>Next, we determine—up to a customizable degree of precision—whether the sequence <m>|A_n|</m> generated by that specific <m>z_0</m> is bounded. The simplest way to evaluate terms of <m>A_n</m> is by brute-force calculation. Of course, we could keep iterating forever, so we'll evaluate the sequence up to some arbitrary stopping point. At each step of the way, we'll check to see if the modulus of <m>a_n</m> exceeds <m>R</m>.</p>
+
+      <p>If such a case occurs, we know right then and there that this specific <m>z_0</m> does not belong to the filled-in Julia set, so we can stop evaluating the sequence. Otherwise, if we reach the stopping point and <m>|a_n|</m> has always been less than or equal to <m>R</m>, then we'll just assume it belongs to the filled-in Julia set.</p>
+
+      <p>We can print something to the terminal at the spot corresponding to the location of <m>z_0</m> on the complex plane, and whatever we print there should depend on whether <m>|A_n|</m> was bounded or not for that <m>z_0</m>. Finally, we repeat the sequence checking and evaluating process for all the squares in our grid.</p>
+
+      <p>You can find my attempt at implementing these features in <url href="https://pastebin.com/kSwCe3db">this</url> pastebin, written in C. Although C supports complex arithmetic, I decided to create my own complex number struct. I don't think it particularly matters.</p>
+
+      <p>Note that I've specified a grid measuring 620 by 310 characters. When I run Windows PowerShell at the smallest possible font size, 620 characters is the about the longest horizontal amount of characters I can fit on a full screen. If you want to run this code for yourself, you might need to tweak some things.</p>
+
+      <p>These next images show what my program outputs for <m>c = -0.75 + 0.11i</m> and <m>c = -0.74543 + 0.11301i</m>, respectively. One thing I'll note is that for especially skinny Julia sets, such as the one for <m>c = -0.8i</m>, the program barely draws anything.</p>
+
+      <image source="image/julia_-0.75_0.11.png" width="100%"/>
+
+      <image source="image/julia_-0.74543_0.11301.png" width="100%"/>
+
+      <p>If you want to compare these drawings to more professional and detailed renders, check the Wikipedia <url href="https://en.wikipedia.org/wiki/Julia_set">page</url> on Julia sets, and scroll down a bit to see the images. Or just read the whole article, while you're there. You'll also find some pseudocode which implements much the same process I outlined above.</p>
+
+      <p>That's all for today. Julia sets—kinda neat.</p>
     </subsection>
   </section>
 

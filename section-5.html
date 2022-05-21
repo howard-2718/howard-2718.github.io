@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-14T03:06:28-07:00       *-->
+<!--*       on 2022-05-20T22:08:06-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,7 +11,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Mathematical Induction and the Cauchy-Schwarz Inequality</title>
+<title>Printing Julia Sets to a Command-Line Interface</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>window.MathJax = {
@@ -63,10 +63,10 @@
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="proofs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="proofs.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="proofs.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="proofs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="proofs.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="miscellaneous.html" title="Up">Up</a><a class="next-button button toolbar-item" href="proofs.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -84,177 +84,141 @@
 <li><a href="section-2.html" data-scroll="section-2">How to Make Any Graph Spin in Desmos</a></li>
 <li><a href="section-3.html" data-scroll="section-3">\(\mathbb{C} \times \mathbb{R}\text{:}\) A Short Thought Experiment</a></li>
 <li><a href="section-4.html" data-scroll="section-4">Compare and Contrast: Three Methods for Integrating \(\sin^6(x)\)</a></li>
+<li><a href="section-5.html" data-scroll="section-5" class="active">Printing Julia Sets to a Command-Line Interface</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="proofs.html" data-scroll="proofs"><span class="codenumber">2</span> <span class="title">Proofs, Proofs...</span></a><ul><li><a href="section-5.html" data-scroll="section-5" class="active">Mathematical Induction and the Cauchy-Schwarz Inequality</a></li></ul>
+<a href="proofs.html" data-scroll="proofs"><span class="codenumber">2</span> <span class="title">Proofs, Proofs...</span></a><ul><li><a href="section-6.html" data-scroll="section-6">Mathematical Induction and the Cauchy-Schwarz Inequality</a></li></ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-5"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Mathematical Induction and the Cauchy-Schwarz Inequality</span>
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Printing Julia Sets to a Command-Line Interface</span>
 </h2>
-<section class="introduction" id="introduction-7"><p id="p-183"><em class="emphasis">January 8th, 2022</em></p>
-<p id="p-184">The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
-<p id="p-185">In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: mathematical induction. This proof is one which I formulated independently — I was inspired to do so after seeing a related problem posted on a Discord server I visit.</p>
-<p id="p-186">Mathematical induction is a great tool to have your inventory, but is sort of a hassle to explain, so I won't do that here. Use the power of the internet! Some sources which I think do a good job covering the topic are <a class="external" href="https://brilliant.org/wiki/induction/" target="_blank">here</a> and <a class="external" href="https://www.mathsisfun.com/algebra/mathematical-induction.html" target="_blank">here</a>.</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Laying the Proverbial Groundwork</span>
+<section class="introduction" id="introduction-6"><p id="p-182"><em class="emphasis">May 20th, 2022</em></p>
+<p id="p-183">Julia sets. Have you heard of those?</p>
+<p id="p-184">If you type 'Julia set' into Google and take a gander at the images, you'll be met with a series of intricate fractals, with spirals and loops every which way.</p>
+<p id="p-185">But what exactly are these weird patterns? How are they generated? And how can we generate them ourselves?</p>
+<p id="p-186">These questions form the core of what we'll be exploring in today's blog post. Join me, as we make a brief jaunt into the world of complex numbers!</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Keeping it Real</span>
 </h3>
-<p id="p-187">The version of the Cauchy-Schwarz Inequality which follows this paragraph — and which we're going to prove — is a bit abridged, for the sake of simplicity. Don't worry, it's still perfectly valid. It's just missing an extra condition for equality.</p>
-<p id="p-188">As previously mentioned, the proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible. It also mainly relies on high-school level algebra.</p>
-<article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz Inequality (Truncated).</span>
-</h6>
-<p id="p-189">For all sequences of real numbers \(a_{i}\) and \(b_{i}\text{,}\) the following inequality holds:</p>
+<p id="p-187">Julia sets live in the world of complex numbers, and frankly, bringing \(i\) into the mix can get confusing. So for now, we'll handle strictly <em class="emphasis">real</em> numbers.</p>
+<p id="p-188">Consider the function \(f: \mathbb{R} \rightarrow \mathbb{R}\) given by</p>
 <div class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{n} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{n} a_{i}^2 \right) \left( \sum_{i = 1}^{n} b_{i}^2 \right)\text{.}
-\end{equation*}
-</div></article><p id="p-190">From the statement of the theorem, it should become apparent why one might be motivated to use mathematical induction as the proof technique. In this context, \(n\) can only assume values in \(\mathbb{Z}^+\text{,}\) so it makes for a good opportunity to utilize induction.</p>
-<p id="p-191">So then, let's get started on that proof! First, we'll consider the base case of \(n = 1\text{,}\) which is quite trivial. We see that</p>
-<div class="displaymath">
-\begin{equation*}
-(a_{1} b_{1})^2 \leq a_{1}^2 b_{1}^2\text{,}
+f(x) = x^2 + c,
 \end{equation*}
 </div>
-<p class="continuation">which is obviously true. The crux of the proof lies in showing that</p>
+<p class="continuation">where \(c \in \mathbb{R}\text{.}\) In order to understand what's going on with Julia sets, we're going to examine what happens to the sequence</p>
 <div class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
+A_n = \{f(x_0), \: f(f(x_0)), \: f(f(f(x_0))), \: f(f(f(f(x_0)))), \: ...\}
 \end{equation*}
 </div>
-<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{.}\)</p></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">It's Always the Algebra...</span>
+<p class="continuation">for certain choices of \(x_0\) and \(c\text{.}\) We're essentially looking at what happens as we keep composing \(f\) with itself.</p>
+<p id="p-189">To get a more concrete idea of this sequence's behavior, we can evaluate some terms for a certain \(x_0\) and \(c\text{,}\) say \(x_0 = 2\) and \(c = -1\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+a_1 \amp = f(x_0) = x_0^2 + c = 2^2 - 1 = 3\\
+a_2 \amp = f(a_1) = a_1^2 + c = 3^2 - 1 = 8\\
+a_3 \amp = f(a_2) = a_2^2 + c = 8^2 - 1 = 63\\
+a_4 \amp = f(a_3) = a_3^2 + c = 63^2 - 1 = 3968\\
+...
+\end{align*}
+</div>
+<p class="continuation">It appears that under these conditions, the sequence grows without bound, so we can say \(A_n \rightarrow \infty\) as \(n \rightarrow \infty\text{.}\) What if we keep \(c = -1\text{,}\) but try a different value of \(x_0\text{,}\) like \(x_0 = 1\text{?}\)</p>
+<div class="displaymath">
+\begin{align*}
+a_1 \amp = f(x_0) = x_0^2 + c = 1^2 - 1 = 0\\
+a_2 \amp = f(a_1) = a_1^2 + c = 0^2 - 1 = -1\\
+a_3 \amp = f(a_2) = a_2^2 + c = (-1)^2 - 1 = 0\\
+a_4 \amp = f(a_3) = a_3^2 + c = 0^2 - 1 = -1\\
+...
+\end{align*}
+</div>
+<p class="continuation">We seem to have entered a loop, where the terms of the sequence periodically alternate between \(0\) and \(-1\text{.}\) In this case, although \(A_n\) doesn't approach anything as \(n \rightarrow \infty\text{,}\) we can be sure that it doesn't blow up to infinity.</p>
+<p id="p-190">This is, in fact, a dichotomy. For any choice of \(x_0\) and \(c\text{,}\) one and only one of the following can be true:</p>
+<ol class="decimal">
+<li id="li-31"><p id="p-191">As \(n \rightarrow \infty\text{,}\) the sequence \(A_n\) blows up to infinity, or</p></li>
+<li id="li-32"><p id="p-192">It doesn't.</p></li>
+</ol>
+<p id="p-193">This raises an interesting question. Given a defined value of \(c\text{,}\) can we determine which values of \(x_0\) will cause the sequence \(A_n\) to tend to infinity?</p>
+<p id="p-194">It turns out that we can find a bound \(R &gt; 0\) dependent on \(c\text{,}\) such that if <em class="emphasis">any</em> term of the sequence \(A_n\) satisfies \(|a_n| &gt; R\text{,}\) then \(A_n \rightarrow \infty\) as \(n \rightarrow \infty\text{.}\)</p>
+<p id="p-195">To find a potential expression for \(R\text{,}\) let's consider one property which would be satisfied in the long term if the sequence \(A_n\) tended to infinity. The property in question is</p>
+<div class="displaymath">
+\begin{equation*}
+|a_{n+1}| &gt; |a_n|.
+\end{equation*}
+</div>
+<p class="continuation">At sufficiently large \(n\text{,}\) this is equivalent to saying that successive terms of the sequence move further and further away from the origin, a behavior which this infinity-approaching sequence would exhibit.</p>
+<p id="p-196">If you, the reader, happen to be an expert in analysis, then I will readily admit that this logic is not quite watertight. For example, a bounded, monotonically increasing sequence would satisfy the inequality, but would <em class="emphasis">not</em> tend to infinity.</p>
+<p id="p-197">However, considering the way the sequence \(A_n\) is defined, we informally expect that such a scenario won't occur. In any case, please forgive my lack of rigor—I am but a measly university undergraduate!</p>
+<p id="p-198">Let's manipulate the inequality \(|a_{n+1}| &gt; |a_n|\) a bit, using the definition of \(f\text{.}\) Suppose \(a_n = x\text{.}\) Then \(a_{n+1} = f(x)\text{,}\) and we perform the following operations.</p>
+<div class="displaymath">
+\begin{align*}
+\amp |f(x)| &gt; |x|\\
+\implies \amp |x^2 + c| &gt; |x|\\
+\implies \amp |x^2| + |c| &gt; |x|\\
+\implies \amp |x|^2 - |x| + |c| &gt; 0
+\end{align*}
+</div>
+<p class="continuation">The third line makes use of the triangle inequality, \(|a| + |b| \geq |a + b|\text{.}\) We now have a quadratic in \(|x|\) on the left hand side, whose roots are</p>
+<div class="displaymath">
+\begin{equation*}
+x = \pm \frac{1 + \sqrt{1 + 4|c|}}{2}.
+\end{equation*}
+</div>
+<p id="p-199">This last expression is our desired value of \(R\text{.}\) To reiterate, if at any point in the sequence \(A_n\) we encounter a term \(a_n\) such that \(|a_n| &gt; R = \frac{1 + \sqrt{1 + 4|c|}}{2}\text{,}\) then \(A_n \rightarrow \infty\) as \(n \rightarrow \infty\text{.}\)</p>
+<p id="p-200">What I've shown here is far from a complete proof, but it hopefully shows, from an informal perspective, how we might have been motivated to find a potential expression for \(R\text{.}\)</p></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">It's All Complex Now</span>
 </h3>
-<p id="p-192">We want to make use of our inductive step, which is our assumption that</p>
+<p id="p-201">It's almost time to discuss Julia sets! We've been discussing \(f(x) = x^2 + c\) for so long that it's almost hard to remember what all this talk was in service of.</p>
+<p id="p-202">Before we do that, though, let's bring our function \(f\) into the complex world. We're dealing with a different—but similar—beast this time.</p>
+<p id="p-203">Now consider the function \(f: \mathbb{C} \rightarrow \mathbb{C}\) given by</p>
 <div class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right)\text{.}
+f(z) = z^2 + c,
 \end{equation*}
 </div>
-<p id="p-193">This should motivate us to express \(\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2\) in terms of \(\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2\text{.}\) Let's write the left hand side out:</p>
+<p class="continuation">where \(c \in \mathbb{C}\text{.}\) The filled-in Julia set of \(f\text{,}\) written as \(K(f)\text{,}\) is defined as (set notation warning)</p>
 <div class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})\text{.}
+K(f) = \{z \in \mathbb{C} : |a_n| \text{ is bounded}\},
 \end{equation*}
 </div>
-<p id="p-194">How does this quantity differ from the other one? Well, note that in addition to the multiplication of</p>
+<p class="continuation">where \(a_n\) refers to the terms of</p>
 <div class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})\text{,}
+A_n = \{f(z), \: f(f(z)), \: f(f(f(z))), \: f(f(f(f(z)))), \: ...\},
 \end{equation*}
 </div>
-<p class="continuation">we also require the last term, \(a_{k+1} b_{k+1}\text{,}\) in the left factor to be distributed to all the terms in the right factor, and vice versa. Since the two factors are the same, that'll result in an additional quantity of</p>
+<p class="continuation">similar as to before. Now that we're in complex land, though, remember that the absolute value notation refers instead to a complex number's modulus.</p>
+<p id="p-204">The Julia set itself, \(J(f)\) is the boundary of the filled-in Julia set. In notation, it looks like \(J(f) = \partial K(f)\text{.}\) Sidebar: the symbol \(\partial\) means 'boundary'. The boundary of a set in the complex plane has a rigorous meaning, but for our purposes, just think of it like the border, or the perimeter.</p>
+<p id="p-205">The rest of this article is devoted to writing a program that prompts the user for a value of \(c\) and prints the corresponding filled-in Julia set, \(K(f)\) to the terminal.</p>
+<p id="p-206">We'll examine an algorithm which can get the job done, after which I'll show my attempt, written in C.</p>
+<p id="p-207">The idea behind the code is to define \(K(f)\) by what it is <em class="emphasis">not</em>. For example, we mentioned that \(K(f)\) is the set of all complex numbers \(z\) such that \(|A_n|\) is bounded. It then follows that if, for a certain \(z_0 \in \mathbb{C}\text{,}\) \(|A_n|\) grows without bound, then evidently \(z_0 \notin K(f)\text{.}\)</p>
+<p id="p-208">It turns out that, much like our real-valued analog, if <em class="emphasis">any</em> term \(a_n\) in our sequence has the property</p>
 <div class="displaymath">
 \begin{equation*}
-2 \cdot (a_1 b_1 a_{k+1} b_{k+1} + a_2 b_2 a_{k+1} b_{k+1} + ... + a_{k} b_{k} a_{k+1} b_{k+1} + a_{k+1} b_{k+1} a_{k+1} b_{k+1})\text{.}
+|a_n| &gt; R = \frac{1 + \sqrt{1 + 4|c|}}{2}\text{,}
 \end{equation*}
 </div>
-<p id="p-195">Therefore,</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-196">Feel free to expand these summations to double-check. Now, the appearance of the middle term marks a good time to invoke the inductive step:</p>
-<div class="displaymath">
-\begin{align*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
-\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right).
-\end{align*}
-</div>
-<p id="p-197">This is a good time to compare the quantity</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)
-\end{equation*}
-</div>
-<p class="continuation">with that of</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-198">Namely, if we can show that the top quantity is less or equal than the bottom quantity, then the proof is complete. Let's expand this latter quantity out:</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = (a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2)\text{.}
-\end{equation*}
-</div>
-<p id="p-199">In a manner similar to what occurred previously, we observe that<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 1 </sup></a></p>
-<div class="displaymath">
-\begin{align*}
-(a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2) = \text{ } \amp (a_1^2 + a_2^2 + ... + a_{k}^2)(b_1^2 + b_2^2 + ... + b_{k}^2) \text{ } +\\
-\amp (a_1^2 b_{k+1}^2 + a_2^2 b_{k+1}^2 + ... + a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2) \text{ } +\\
-\amp (a_{k+1}^2 b_1^2 + a_{k+1}^2 b_2^2 + ... + a_{k+1}^2 b_{k}^2 + a_{k+1}^2 b_{k+1}^2).
-\end{align*}
-</div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn">It's not real math unless it runs off the page!</div></div>
-<p id="p-200">In summation notation, we obtain</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Approaching an Apex; Alternatively, an Apotheosis</span>
+<p class="continuation">then the sequence \(|A_n|\) is not bounded. Remember that \(A_n\) depends on both the value \(c\) as well as where we start iterating from, which we'll call \(z_0\text{.}\)</p></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.3</span> <span class="title">Putting our Programmer Hats On</span>
 </h3>
-<p id="p-201">At this point, we should begin to envision what the final result will look like. If we could show the following, then we would have a complete proof:</p>
-<div class="displaymath">
-\begin{align*}
-\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
-\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
-\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\\
-\amp = \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right).
-\end{align*}
-</div>
-<p id="p-202">So far, we have shown the first, second, and fourth (in)equalities to be true. The last obstacle to overcome in order to finish this induction proof is to show that</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-203">This is, of course, equivalent to showing that</p>
-<div class="displaymath">
-\begin{equation*}
-2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-204">Let's see what these would look like written out<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 2 </sup></a>:</p>
-<div class="displaymath">
-\begin{equation*}
-2(a_1 a_{k+1} b_1 b_{k+1} + a_2 a_{k+1} b_2 b_{k+1} + ... + a_{k} a_{k+1} b_{k} b_{k+1} + a_{k+1} a_{k+1} b_{k+1} b_{k+1}) \leq (a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2) + (a_2^2 b_{k+1}^2 + a_{k+1}^2 b_2^2) + ... + (a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k}^2) + (a_{k+1}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2)\text{.}
-\end{equation*}
-</div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn">Writing the sums out isn't necessary, but I think it helps one get a sense of the algebra. Also, sorry about this line being ridiculously long.</div></div>
-<p id="p-205">At this point, my line of reasoning resembled something like this: "<em class="emphasis">The left and right-hand sides are both sums of k+1 terms. If I could show that each term on the left is less than or equal to its respective term on the right, then I'd be done</em>".</p>
-<p id="p-206">That is, by the way, exactly what we're going to show. Do the quantities \(a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2\) and \(2(a_1 a_{k+1} b_1 b_{k+1})\) remind you of anything?</p>
-<p id="p-207">What if they were re-written as \((a_1 b_{k+1})^2 + (a_{k+1} b_1)^2\) and \(2(a_1 b_{k+1} \cdot a_{k+1} b_1)\text{?}\) I won't keep you in suspense anymore — we're going to make use of the fact that \(p^2 + q^2 \geq 2pq\) for all \(p, q \in \mathbb{R}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 3 </sup></a>.</p>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><div class="displaymath">
-\begin{align*}
-(p - q)^2 \amp \geq 0\\
-\implies p^2 + q^2 - 2pq \amp \geq 0\\
-\implies p^2 + q^2 \amp \geq 2pq.
-\end{align*}
-</div></div></div>
-<p id="p-208">It follows immediately from said fact that</p>
-<div class="displaymath">
-\begin{equation*}
-2(a_i a_{k+1} b_i b_{k+1}) \leq (a_i^2 b_{k+1}^2 + a_{k+1}^2 b_i^2)
-\end{equation*}
-</div>
-<p class="continuation">for all \(i \in \{1, 2, 3, ..., k, k + 1\}\text{.}\) Then we have shown on a term-by-term basis that</p>
-<div class="displaymath">
-\begin{equation*}
-2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
-\end{equation*}
-</div>
-<p id="p-209">At last, we have shown that</p>
-<div class="displaymath">
-\begin{equation*}
-\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
-\end{equation*}
-</div>
-<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{,}\) by the Principle of Mathematical Induction. This therefore proves our truncated version of the Cauchy-Schwarz Inequality. \(\blacksquare\)</p></section></section></div></main>
+<p id="p-209">Let's approach all this from a coding point of view. First, the look of the filled-in Julia set will depend heavily (if not entirely) on \(c\text{,}\) so we'll need some way of specifying that. We should let the user enter the complex number of their choice.</p>
+<p id="p-210">Then, we need to find the initial values \(z_0\) in the complex plane which don't belong to the filled-in Julia set. There's more than one way to do it, but we can create an \(x\) by \(y\) grid of characters, where \(x\) and \(y\) are to our liking. We'll require a way to map a square in the grid to a corresponding point in the complex plane.</p>
+<p id="p-211">The area in the complex plane which our grid covers need only include all points that are up to and including a distance \(R\) away from the origin. Anything outside that disc would automatically fail to have a bounded sequence, and would not be in the filled-in Julia set.</p>
+<p id="p-212">Next, we determine—up to a customizable degree of precision—whether the sequence \(|A_n|\) generated by that specific \(z_0\) is bounded. The simplest way to evaluate terms of \(A_n\) is by brute-force calculation. Of course, we could keep iterating forever, so we'll evaluate the sequence up to some arbitrary stopping point. At each step of the way, we'll check to see if the modulus of \(a_n\) exceeds \(R\text{.}\)</p>
+<p id="p-213">If such a case occurs, we know right then and there that this specific \(z_0\) does not belong to the filled-in Julia set, so we can stop evaluating the sequence. Otherwise, if we reach the stopping point and \(|a_n|\) has always been less than or equal to \(R\text{,}\) then we'll just assume it belongs to the filled-in Julia set.</p>
+<p id="p-214">We can print something to the terminal at the spot corresponding to the location of \(z_0\) on the complex plane, and whatever we print there should depend on whether \(|A_n|\) was bounded or not for that \(z_0\text{.}\) Finally, we repeat the sequence checking and evaluating process for all the squares in our grid.</p>
+<p id="p-215">You can find my attempt at implementing these features in <a class="external" href="https://pastebin.com/kSwCe3db" target="_blank">this</a> pastebin, written in C. Although C supports complex arithmetic, I decided to create my own complex number struct. I don't think it particularly matters.</p>
+<p id="p-216">Note that I've specified a grid measuring 620 by 310 characters. When I run Windows PowerShell at the smallest possible font size, 620 characters is the about the longest horizontal amount of characters I can fit on a full screen. If you want to run this code for yourself, you might need to tweak some things.</p>
+<p id="p-217">These next images show what my program outputs for \(c = -0.75 + 0.11i\) and \(c = -0.74543 + 0.11301i\text{,}\) respectively. One thing I'll note is that for especially skinny Julia sets, such as the one for \(c = -0.8i\text{,}\) the program barely draws anything.</p>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="image/julia_-0.75_0.11.png" class="contained" alt=""></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="image/julia_-0.74543_0.11301.png" class="contained" alt=""></div>
+<p id="p-218">If you want to compare these drawings to more professional and detailed renders, check the Wikipedia <a class="external" href="https://en.wikipedia.org/wiki/Julia_set" target="_blank">page</a> on Julia sets, and scroll down a bit to see the images. Or just read the whole article, while you're there. You'll also find some pseudocode which implements much the same process I outlined above.</p>
+<p id="p-219">That's all for today. Julia sets—kinda neat.</p></section></section></div></main>
 </div>
 </body>
 </html>

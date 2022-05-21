@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-14T03:06:29-07:00       *-->
+<!--*       on 2022-05-20T22:08:06-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,10 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Namely, if we can show that the top quantity is less or equal than the bottom quantity, then the proof is complete. Let's expand this latter quantity out:</p>
+<p>Let's manipulate the inequality \(|a_{n+1}| &gt; |a_n|\) a bit, using the definition of \(f\text{.}\) Suppose \(a_n = x\text{.}\) Then \(a_{n+1} = f(x)\text{,}\) and we perform the following operations.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp |f(x)| &gt; |x|\\
+\implies \amp |x^2 + c| &gt; |x|\\
+\implies \amp |x^2| + |c| &gt; |x|\\
+\implies \amp |x|^2 - |x| + |c| &gt; 0
+\end{align*}
+</div>
+<p class="continuation">The third line makes use of the triangle inequality, \(|a| + |b| \geq |a + b|\text{.}\) We now have a quadratic in \(|x|\) on the left hand side, whose roots are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = (a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2)\text{.}
+x = \pm \frac{1 + \sqrt{1 + 4|c|}}{2}.
 \end{equation*}
 </div>
 <span class="incontext"><a href="section-5.html#p-198">in-context</a></span>

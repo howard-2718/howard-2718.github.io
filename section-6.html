@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-05-20T22:08:06-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mathematical Induction and the Cauchy-Schwarz Inequality</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Romance on a Parabola:</span> <span class="subtitle">A PreTeXt Math Blog</span></a></h1>
+<p class="byline">Howard Li</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="proofs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="proofs.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="proofs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="proofs.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon.html" data-scroll="colophon">Colophon</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-contents.html" data-scroll="part-contents"><span class="codenumber">I</span> <span class="title">Contents</span></a></li>
+<li class="link">
+<a href="miscellaneous.html" data-scroll="miscellaneous"><span class="codenumber">1</span> <span class="title">Miscellaneous Fun</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Calculus in Incremental Game Mechanics</a></li>
+<li><a href="section-2.html" data-scroll="section-2">How to Make Any Graph Spin in Desmos</a></li>
+<li><a href="section-3.html" data-scroll="section-3">\(\mathbb{C} \times \mathbb{R}\text{:}\) A Short Thought Experiment</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Compare and Contrast: Three Methods for Integrating \(\sin^6(x)\)</a></li>
+<li><a href="section-5.html" data-scroll="section-5">Printing Julia Sets to a Command-Line Interface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="proofs.html" data-scroll="proofs"><span class="codenumber">2</span> <span class="title">Proofs, Proofs...</span></a><ul><li><a href="section-6.html" data-scroll="section-6" class="active">Mathematical Induction and the Cauchy-Schwarz Inequality</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-6"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Mathematical Induction and the Cauchy-Schwarz Inequality</span>
+</h2>
+<section class="introduction" id="introduction-8"><p id="p-221"><em class="emphasis">January 8th, 2022</em></p>
+<p id="p-222">The Cauchy-Schwarz Inequality is a semi-obscure mathematical theorem, and one which I would wager most first-year undergraduate students haven't heard of before. Essentially, it has to do with squares of sums of real-valued sequences.</p>
+<p id="p-223">In this section, I'd like to take a crack at proving the Cauchy-Schwarz Inequality using my personal favourite proof technique: mathematical induction. This proof is one which I formulated independently — I was inspired to do so after seeing a related problem posted on a Discord server I visit.</p>
+<p id="p-224">Mathematical induction is a great tool to have your inventory, but is sort of a hassle to explain, so I won't do that here. Use the power of the internet! Some sources which I think do a good job covering the topic are <a class="external" href="https://brilliant.org/wiki/induction/" target="_blank">here</a> and <a class="external" href="https://www.mathsisfun.com/algebra/mathematical-induction.html" target="_blank">here</a>.</p></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Laying the Proverbial Groundwork</span>
+</h3>
+<p id="p-225">The version of the Cauchy-Schwarz Inequality which follows this paragraph — and which we're going to prove — is a bit abridged, for the sake of simplicity. Don't worry, it's still perfectly valid. It's just missing an extra condition for equality.</p>
+<p id="p-226">As previously mentioned, the proof which I give in this section is how I originally proved this theorem myself. It isn't very elegant, but I believe it follows straightforward lines of reasoning, which makes it relatively accessible. It also mainly relies on high-school level algebra.</p>
+<article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz Inequality (Truncated).</span>
+</h6>
+<p id="p-227">For all sequences of real numbers \(a_{i}\) and \(b_{i}\text{,}\) the following inequality holds:</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{n} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{n} a_{i}^2 \right) \left( \sum_{i = 1}^{n} b_{i}^2 \right)\text{.}
+\end{equation*}
+</div></article><p id="p-228">From the statement of the theorem, it should become apparent why one might be motivated to use mathematical induction as the proof technique. In this context, \(n\) can only assume values in \(\mathbb{Z}^+\text{,}\) so it makes for a good opportunity to utilize induction.</p>
+<p id="p-229">So then, let's get started on that proof! First, we'll consider the base case of \(n = 1\text{,}\) which is quite trivial. We see that</p>
+<div class="displaymath">
+\begin{equation*}
+(a_{1} b_{1})^2 \leq a_{1}^2 b_{1}^2\text{,}
+\end{equation*}
+</div>
+<p class="continuation">which is obviously true. The crux of the proof lies in showing that</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
+\end{equation*}
+</div>
+<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{.}\)</p></section><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">It's Always the Algebra...</span>
+</h3>
+<p id="p-230">We want to make use of our inductive step, which is our assumption that</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-231">This should motivate us to express \(\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2\) in terms of \(\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2\text{.}\) Let's write the left hand side out:</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k} + a_{k+1} b_{k+1})\text{.}
+\end{equation*}
+</div>
+<p id="p-232">How does this quantity differ from the other one? Well, note that in addition to the multiplication of</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 = (a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})(a_1 b_1 + a_2 b_2 + ... + a_{k} b_{k})\text{,}
+\end{equation*}
+</div>
+<p class="continuation">we also require the last term, \(a_{k+1} b_{k+1}\text{,}\) in the left factor to be distributed to all the terms in the right factor, and vice versa. Since the two factors are the same, that'll result in an additional quantity of</p>
+<div class="displaymath">
+\begin{equation*}
+2 \cdot (a_1 b_1 a_{k+1} b_{k+1} + a_2 b_2 a_{k+1} b_{k+1} + ... + a_{k} b_{k} a_{k+1} b_{k+1} + a_{k+1} b_{k+1} a_{k+1} b_{k+1})\text{.}
+\end{equation*}
+</div>
+<p id="p-233">Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-234">Feel free to expand these summations to double-check. Now, the appearance of the middle term marks a good time to invoke the inductive step:</p>
+<div class="displaymath">
+\begin{align*}
+\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
+\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right).
+\end{align*}
+</div>
+<p id="p-235">This is a good time to compare the quantity</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)
+\end{equation*}
+</div>
+<p class="continuation">with that of</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-236">Namely, if we can show that the top quantity is less or equal than the bottom quantity, then the proof is complete. Let's expand this latter quantity out:</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = (a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2)\text{.}
+\end{equation*}
+</div>
+<p id="p-237">In a manner similar to what occurred previously, we observe that<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 1 </sup></a></p>
+<div class="displaymath">
+\begin{align*}
+(a_1^2 + a_2^2 + ... + a_{k}^2 + a_{k+1}^2)(b_1^2 + b_2^2 + ... + b_{k}^2 + b_{k+1}^2) = \text{ } \amp (a_1^2 + a_2^2 + ... + a_{k}^2)(b_1^2 + b_2^2 + ... + b_{k}^2) \text{ } +\\
+\amp (a_1^2 b_{k+1}^2 + a_2^2 b_{k+1}^2 + ... + a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2) \text{ } +\\
+\amp (a_{k+1}^2 b_1^2 + a_{k+1}^2 b_2^2 + ... + a_{k+1}^2 b_{k}^2 + a_{k+1}^2 b_{k+1}^2).
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn">It's not real math unless it runs off the page!</div></div>
+<p id="p-238">In summation notation, we obtain</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right) = \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
+\end{equation*}
+</div></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Approaching an Apex; Alternatively, an Apotheosis</span>
+</h3>
+<p id="p-239">At this point, we should begin to envision what the final result will look like. If we could show the following, then we would have a complete proof:</p>
+<div class="displaymath">
+\begin{align*}
+\left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \amp = \left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
+\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right)\\
+\amp \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\\
+\amp = \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right).
+\end{align*}
+</div>
+<p id="p-240">So far, we have shown the first, second, and fourth (in)equalities to be true. The last obstacle to overcome in order to finish this induction proof is to show that</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + 2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) + \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-241">This is, of course, equivalent to showing that</p>
+<div class="displaymath">
+\begin{equation*}
+2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-242">Let's see what these would look like written out<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 2 </sup></a>:</p>
+<div class="displaymath">
+\begin{equation*}
+2(a_1 a_{k+1} b_1 b_{k+1} + a_2 a_{k+1} b_2 b_{k+1} + ... + a_{k} a_{k+1} b_{k} b_{k+1} + a_{k+1} a_{k+1} b_{k+1} b_{k+1}) \leq (a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2) + (a_2^2 b_{k+1}^2 + a_{k+1}^2 b_2^2) + ... + (a_{k}^2 b_{k+1}^2 + a_{k+1}^2 b_{k}^2) + (a_{k+1}^2 b_{k+1}^2 + a_{k+1}^2 b_{k+1}^2)\text{.}
+\end{equation*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn">Writing the sums out isn't necessary, but I think it helps one get a sense of the algebra. Also, sorry about this line being ridiculously long.</div></div>
+<p id="p-243">At this point, my line of reasoning resembled something like this: "<em class="emphasis">The left and right-hand sides are both sums of k+1 terms. If I could show that each term on the left is less than or equal to its respective term on the right, then I'd be done</em>".</p>
+<p id="p-244">That is, by the way, exactly what we're going to show. Do the quantities \(a_1^2 b_{k+1}^2 + a_{k+1}^2 b_1^2\) and \(2(a_1 a_{k+1} b_1 b_{k+1})\) remind you of anything?</p>
+<p id="p-245">What if they were re-written as \((a_1 b_{k+1})^2 + (a_{k+1} b_1)^2\) and \(2(a_1 b_{k+1} \cdot a_{k+1} b_1)\text{?}\) I won't keep you in suspense anymore — we're going to make use of the fact that \(p^2 + q^2 \geq 2pq\) for all \(p, q \in \mathbb{R}\)<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 3 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><div class="displaymath">
+\begin{align*}
+(p - q)^2 \amp \geq 0\\
+\implies p^2 + q^2 - 2pq \amp \geq 0\\
+\implies p^2 + q^2 \amp \geq 2pq.
+\end{align*}
+</div></div></div>
+<p id="p-246">It follows immediately from said fact that</p>
+<div class="displaymath">
+\begin{equation*}
+2(a_i a_{k+1} b_i b_{k+1}) \leq (a_i^2 b_{k+1}^2 + a_{k+1}^2 b_i^2)
+\end{equation*}
+</div>
+<p class="continuation">for all \(i \in \{1, 2, 3, ..., k, k + 1\}\text{.}\) Then we have shown on a term-by-term basis that</p>
+<div class="displaymath">
+\begin{equation*}
+2\left( \sum_{i = 1}^{k+1} a_{i} a_{k+1} b_{i} b_{k+1} \right) \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 b_{k+1}^2 + a_{k+1}^2 b_{i}^2 \right)\text{.}
+\end{equation*}
+</div>
+<p id="p-247">At last, we have shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\left( \sum_{i = 1}^{k} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k} a_{i}^2 \right) \left( \sum_{i = 1}^{k} b_{i}^2 \right) \implies \left( \sum_{i = 1}^{k+1} a_{i} b_{i} \right)^2 \leq \left( \sum_{i = 1}^{k+1} a_{i}^2 \right) \left( \sum_{i = 1}^{k+1} b_{i}^2 \right)
+\end{equation*}
+</div>
+<p class="continuation">holds for all \(k \in \mathbb{Z}^+\text{,}\) by the Principle of Mathematical Induction. This therefore proves our truncated version of the Cauchy-Schwarz Inequality. \(\blacksquare\)</p></section></section></div></main>
+</div>
+</body>
+</html>
