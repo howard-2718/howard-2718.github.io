@@ -429,9 +429,9 @@
     <subsection xml-id="miscellaneous-three_methods-standard">
       <title>Evaluating <m>\int \sin^6(x) \: dx</m> by Standard Trigonometric Identities</title>
 
-      <p>In this first technique, our approach will be to repeatedly use variants of the well-known trig identity <me>\cos(2x) = 1 - \sin^2(x)</me> and <me>\cos^2(x) = \frac{1}{2} + \frac{\cos(2x)}{2}</me> to get rid of those pesky exponents.</p>
+      <p>In this first technique, our approach will be to repeatedly use variants of the well known trig identity <me>\cos(2x) = 1 - 2\sin^2(x)</me> and <me>\cos^2(x) = \frac{1}{2} + \frac{\cos(2x)}{2}</me> to get rid of those pesky exponents.</p>
 
-      <p>First, let us quickly rearrange the first identity to isolate <m>\sin^2(x)</m>: <me>\cos(2x) = 1 - \sin^2(x) \implies \sin^2(x) = \frac{1}{2} - \frac{\cos(2x)}{2}.</me></p>
+      <p>First, let us quickly rearrange the first identity to isolate <m>\sin^2(x)</m>: <me>\cos(2x) = 1 - 2\sin^2(x) \implies \sin^2(x) = \frac{1}{2} - \frac{\cos(2x)}{2}.</me></p>
 
       <p>The following mathematical work will be a bit sparse on commentary, but hopefully the steps taken are easy enough to follow. The idea is to, for lack of a better word, spam these two identities to gradually wear down the exponents.
         <md>
